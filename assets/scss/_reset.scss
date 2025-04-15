@@ -25,33 +25,10 @@ body {
   height: 100%;
   background: var(--bg);
   color: var(--color);
-  font-family: var(--regular);
+  font-family: var(--900);
   line-height: 1.4;
   overflow-x: hidden;
   overflow-y: auto;
-}
-
-.background {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100vh;
-  z-index: 0;
-  overflow: hidden;
-
-  img {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: auto;
-    opacity: 1;
-    @media (max-width: 1199px) {
-      height: 100%;
-      object-fit: cover;
-    }
-  }
 }
 
 img {
@@ -68,8 +45,9 @@ h4,
 h5,
 h6,
 b,
+a,
 strong {
-  font-family: var(--bold);
+  font-family: var(--900);
   color: inherit;
 }
 
@@ -92,73 +70,4 @@ menu {
 
 a {
   text-decoration: none;
-  color: inherit;
-}
-
-.icon {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.lime {
-  color: var(--lime);
-}
-.pink {
-  color: var(--pink);
-}
-.violet {
-  color: var(--violet);
-}
-
-.green-gradient {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 117, 103, 0) 0%,
-    var(--green-light) 150px,
-    var(--green-light) calc(100% - 150px),
-    rgba(0, 117, 103, 0) 100%
-  );
-}
-
-.violet-gradient {
-  background: linear-gradient(180deg, rgba(0, 117, 103, 0) 0%, var(--violet) 150px, var(--violet) calc(100% - 150px), rgba(0, 117, 103, 0) 100%);
-}
-
-.target {
-  display: block;
-  width: 10px;
-  height: 10px;
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-  pointer-events: none;
-  left: 0px;
-  &.target--prizes {
-    top: -100px;
-  }
-  &.target--winners {
-    top: -70px;
-  }
-  &.target--buy {
-    top: -70px;
-  }
-  &.target--faq {
-    top: -60px;
-  }
-  &.target--callback-form {
-    top: -30px;
-  }
-  &.target--rules {
-    top: -20px;
-    @media (max-width: 767px) {
-      top: 60px;
-    }
-  }
-  &.target--activity {
-    top: -110px;
-    @media (max-width: 767px) {
-      top: -80px;
-    }
-  }
 }

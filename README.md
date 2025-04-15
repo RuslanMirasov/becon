@@ -1,3 +1,3 @@
-# Gorilla energy drink Landing Page
+# Omsk becon website
 
 ![Project Preview](./public/poster.webp)

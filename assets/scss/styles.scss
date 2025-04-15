@@ -1,28 +1,24 @@
 :root {
-  --regular: 'dinpro-regular', sans-serif;
-  --medium: 'dinpro-medium', sans-serif;
-  --semibold: 'cocogoose-compressed-semibold', sans-serif;
-  --bold: 'cocogoose-compressed-bold', sans-serif;
-  --light: 'cocogoose-compressed-light', sans-serif;
-  --bg: #172d1d;
-  --color: #ffffff;
+  --900: 'roadradio-black', sans-serif;
+  --500: 'montserrat-medium', sans-serif;
+  --600: 'montserrat-semibold', sans-serif;
+
+  --bg: #ffffff;
+  --color: #1a2663;
   --white: #ffffff;
   --black: #000000;
-  --violet: #5c427f;
-  --lime: #cfda46;
-  --pink: #eb5dbf;
-  --green: #114841;
-  --green-light: #007567;
-  --green-dark: #172d1d;
+  --grey: #d5d5d5;
+  --grey-dark: #adadad;
+  --red: #b7142b;
 
   // Inputs
-  --input-font-family: 'dinpro-regular', sans-serif;
-  --input-font-size: 14px;
+  --input-font-family: var(--900);
+  --input-font-size: 22px;
   --input-background: #ffffff;
-  --input-border: #000000;
+  --input-border: #cccccc;
   --input-color: #000000;
-  --input-placeholder-color: #000000;
-  --invalid: red;
+  --input-placeholder-color: rgba(0, 0, 0, 0.2);
+  --invalid: #b7142b;
 }
 
 @import 'mixins';
@@ -37,12 +33,3 @@
 @import 'forms';
 @import 'footer';
 @import 'popup';
-@import 'section__hero';
-@import 'section__tutorial';
-@import 'section__activation';
-@import 'section__million';
-@import 'section__prizes';
-@import 'section__table';
-@import 'section__buy';
-@import 'section__faq';
-@import 'section__lk';
