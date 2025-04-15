@@ -1,0 +1,48 @@
+:root {
+  --regular: 'dinpro-regular', sans-serif;
+  --medium: 'dinpro-medium', sans-serif;
+  --semibold: 'cocogoose-compressed-semibold', sans-serif;
+  --bold: 'cocogoose-compressed-bold', sans-serif;
+  --light: 'cocogoose-compressed-light', sans-serif;
+  --bg: #172d1d;
+  --color: #ffffff;
+  --white: #ffffff;
+  --black: #000000;
+  --violet: #5c427f;
+  --lime: #cfda46;
+  --pink: #eb5dbf;
+  --green: #114841;
+  --green-light: #007567;
+  --green-dark: #172d1d;
+
+  // Inputs
+  --input-font-family: 'dinpro-regular', sans-serif;
+  --input-font-size: 14px;
+  --input-background: #ffffff;
+  --input-border: #000000;
+  --input-color: #000000;
+  --input-placeholder-color: #000000;
+  --invalid: red;
+}
+
+@import 'mixins';
+@import 'fonts';
+@import 'animations';
+@import 'preloader';
+@import 'reset';
+@import 'main';
+@import 'header';
+@import 'buttons';
+@import 'typography';
+@import 'forms';
+@import 'footer';
+@import 'popup';
+@import 'section__hero';
+@import 'section__tutorial';
+@import 'section__activation';
+@import 'section__million';
+@import 'section__prizes';
+@import 'section__table';
+@import 'section__buy';
+@import 'section__faq';
+@import 'section__lk';
