@@ -47,15 +47,3 @@
   font-size: myclamp(14px, 16px, 1440px, 1440px);
   line-height: 1.4;
 }
-
-.test {
-  display: block;
-  max-width: 758px;
-  padding: 100px;
-  background: var(--color);
-  font-family: var(--500);
-  font-size: 16px;
-  line-height: 1.4;
-  letter-spacing: -0.32px;
-  color: #adadad;
-}
