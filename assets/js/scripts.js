@@ -1,4 +1,5 @@
 import { popup } from './popup.js';
+import { slidersInit } from './sliders.js';
 
 const initNavigationMenu = () => {
   const burger = document.querySelector('.burger');
@@ -24,4 +25,5 @@ const hidePreloader = () => {
 popup.init();
 window.popup = popup;
 initNavigationMenu();
+slidersInit();
 hidePreloader();

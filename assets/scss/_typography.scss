@@ -9,37 +9,10 @@
 
 .title {
   display: block;
+  font-size: 62px;
+  line-height: 1;
+  letter-spacing: -1.24px;
   text-transform: uppercase;
-
-  &.title--h1 {
-    font-size: myclamp(30px, 56px, 1366px, 1366px);
-    line-height: 1.07;
-  }
-
-  &.title--h2 {
-    font-size: myclamp(48px, 74px, 1440px, 1440px);
-    line-height: 1.1;
-  }
-
-  &.title--h3 {
-    font-size: myclamp(48px, 64px, 1440px, 1440px);
-    line-height: 1;
-  }
-
-  &.title--h4 {
-    font-size: myclamp(18px, 32px, 1440px, 1440px);
-    line-height: 1.2;
-  }
-
-  &.title--h5 {
-    font-size: myclamp(18px, 30px, 1440px, 1440px);
-    line-height: 1;
-  }
-
-  &.title--h6 {
-    font-size: myclamp(18px, 24px, 1440px, 1440px);
-    line-height: 1;
-  }
 }
 
 .subtitle {

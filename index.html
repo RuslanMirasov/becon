@@ -7,6 +7,7 @@
     <meta name="description" content="Омский бекон" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/styles.min.css" />
     <title>Омский бекон</title>
   </head>
@@ -18,7 +19,7 @@
       </span>
     </div>
 
-    <button class="button button--markets" data-popup-open="markets">Где купить</button>
+    <!-- <button class="button button--markets" data-popup-open="markets">Где купить</button> -->
 
     <!--HEADER-->
     <header class="header" data-fixed>
@@ -60,8 +61,46 @@
     <main class="main">
       <!--SECTION HERO-->
       <section class="section section--hero">
+        <div class="swiper swiper--hero">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./assets/img/hero/slide1.webp" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/img/hero/slide2.webp" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/img/hero/slide3.webp" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/img/hero/slide4.webp" alt="" />
+            </div>
+          </div>
+        </div>
         <div class="container">
-          <h1 class="title title--h1">ЛУЧШЕЕ в мире <br />СДЕЛАНО В СИБИРИ!*</h1>
+          <h1 class="title">Лучшее в мире <br />сделано в сибири!<span>*</span></h1>
+          <div class="thumb">
+            <div class="swiper swiper--thumb">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./assets/img/hero/slide1.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/hero/slide2.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/hero/slide3.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/hero/slide4.webp" alt="" />
+                </div>
+              </div>
+            </div>
+            <p class="hero-info">
+              * Информация была собрана в рамках исследования, проведенного ООО «Тибурон» с помощью онлайн-платформы Fastuna среди 100 человек,
+              участвовавших в онлайн-опросе 22 июня 2024 года
+            </p>
+          </div>
         </div>
       </section>
     </main>
@@ -112,6 +151,7 @@
       </symbol>
     </svg>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/forms.js" type="module"></script>
     <script src="./assets/js/scripts.js" type="module"></script>
   </body>
