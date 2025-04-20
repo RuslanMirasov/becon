@@ -58,6 +58,22 @@
     transform: rotate(360deg);
   }
 }
+@-webkit-keyframes rotateleft {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rotateleft {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 .preloader {
   display: flex;
   justify-content: center;
@@ -702,6 +718,7 @@ a {
   line-height: 1;
   letter-spacing: -0.48px;
   margin-top: auto;
+  z-index: 3;
 }
 .article-image:hover img {
   transform: scale(1.08);
@@ -716,9 +733,6 @@ a {
   z-index: 2;
   pointer-events: none;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(87, 199, 133, 0) 30%, rgba(255, 255, 255, 0) 100%);
-}
-.article-image > *:not(img) {
-  z-index: 3;
 }
 
 .article {
@@ -738,25 +752,54 @@ a {
   top: 5%;
 }
 .article .article-image:before {
+  content: none;
+}
+.article .article-image .spinner:before {
   background: url("../img/svg/product-hover-blue.svg") no-repeat center center/cover;
 }
-.article .article-image.blue-gradient:before {
+.article .article-image.blue-gradient .spinner:before {
+  opacity: 1;
   background: url("../img/svg/product-hover-white.svg") no-repeat center center/cover;
 }
-.article .article-image:before {
+.article .article-image:hover img {
+  transform: scale(1);
+}
+
+.spinner {
+  display: block;
+  position: absolute;
   width: 80%;
   height: 80%;
   left: 10%;
   top: 10%;
   z-index: -1;
-  transform: rotate(0deg);
+  transition: opacity 0.3s;
 }
-.article .article-image:hover img {
-  transform: scale(1);
+.spinner:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-animation: rotate 5s linear infinite;
+          animation: rotate 5s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
-.article .article-image:hover:before {
-  transition: transform 10s linear;
-  transform: rotate(360deg);
+
+.blue-gradient .spinner {
+  opacity: 0;
+}
+
+.article-image:hover .spinner {
+  opacity: 0.8;
+}
+.article-image:hover .spinner:before {
+  -webkit-animation: rotate 5s linear infinite;
+          animation: rotate 5s linear infinite;
 }
 
 .text-content {
