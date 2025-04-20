@@ -17,7 +17,7 @@ const updateParallax = () => {
 
     const translateY = distance * -speed;
 
-    el.style.transform = `translateY(${translateY}px)`;
+    el.style.transform = `translate(-50%, ${translateY}px)`;
   });
 };
 
@@ -25,12 +25,6 @@ const onScroll = () => {
   requestAnimationFrame(updateParallax);
 };
 
-// window.addEventListener(
-//   'scroll',
-//   throttle(() => {
-//     onScroll();
-//   }, 40)
-// );
 window.addEventListener('scroll', onScroll);
 window.addEventListener('resize', onScroll);
 document.addEventListener('DOMContentLoaded', updateParallax);

@@ -1,0 +1,99 @@
+.section--about {
+  .container {
+    > .title {
+      text-align: center;
+    }
+  }
+
+  h1.title {
+    position: relative;
+    span {
+      display: block;
+      &.large {
+        font-size: 100px;
+        line-height: 0.9;
+        letter-spacing: -0.96px;
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 4%;
+      bottom: 80%;
+      width: 138px;
+      height: 138px;
+      border-radius: 138px;
+      overflow: hidden;
+      background: url(../img/mark.webp) no-repeat center center / cover;
+      z-index: 2;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+.about {
+  margin-top: 30px;
+  margin-bottom: 90px;
+  li {
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -40px;
+      top: 82px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      overflow: hidden;
+      background: var(--brown) url(../img/svg/arrow-next.svg) no-repeat center center / cover;
+      z-index: 2;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &:last-child {
+      &:after {
+        content: none;
+      }
+    }
+  }
+  .article-image {
+    height: 220px;
+    &:hover {
+      img {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.about__text {
+  display: block;
+  text-align: left;
+  margin-top: 22px;
+  font-family: var(--500);
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.32px;
+  color: #737373;
+}
+
+.facts {
+  margin-top: 30px;
+  margin-bottom: 80px;
+  li {
+    background: #e8e9ef;
+    padding: 30px 28px;
+    border-radius: 30px;
+  }
+  .title {
+    font-size: 32px;
+    position: relative;
+    z-index: 1;
+    line-height: 0.9;
+    color: #cd042c;
+    margin-top: 10px;
+    margin-bottom: -14px;
+  }
+}

@@ -1,8 +1,10 @@
 .section--parallax {
   display: flex;
   position: relative;
+  overflow: hidden;
   width: 100%;
   height: auto;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -13,25 +15,37 @@
   z-index: -1;
 
   &.no-margin {
-    margin-top: -4%;
+    margin-top: 0%;
+    margin-bottom: 0px;
+    img {
+      top: -6%;
+      &:last-child {
+        margin-top: -6%;
+      }
+    }
   }
 
   img {
     position: absolute;
     width: 100%;
+    min-width: 1440px;
     height: 100%;
-    left: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
     top: 0px;
     object-fit: cover;
     &:last-child {
       position: relative;
       height: auto;
     }
+    &.parallax-text {
+      max-width: 100%;
+      min-width: 100%;
+    }
+    &[data-parallax] {
+      object-fit: contain;
+      will-change: transform;
+      transition: transform 2s cubic-bezier(0, 0.58, 0, 1);
+    }
   }
-}
-
-[data-parallax] {
-  will-change: transform;
-  transform: translateY(0);
-  transition: transform 2s cubic-bezier(0, 0.58, 0, 1);
 }

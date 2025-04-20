@@ -67,72 +67,71 @@
       <section class="section section--parallax no-margin">
         <div class="parallax">
           <img src="../assets/img//parallax/background.webp" alt="" />
-          <img src="../assets/img//parallax/text.webp" alt="" data-parallax="0.2" />
+          <img src="../assets/img//parallax/text.webp" alt="" data-parallax="0.2" class="parallax-text" />
           <img src="../assets/img//parallax/forground.webp" alt="" />
         </div>
       </section>
 
-      <!--БЕГУЩАЯ СТРОКА-->
-      <div class="marquee">
-        <div class="marquee__inner">
-          <span>СДЕЛАНО В СИБИРИ&nbsp;&nbsp;СДЕЛАНО В СИБИРИ</span>
-          <span>СДЕЛАНО В СИБИРИ&nbsp;&nbsp;СДЕЛАНО В СИБИРИ</span>
-        </div>
-      </div>
-
-      <!--ФОРМА ОБРАТНОЙ СВЯЗИ-->
-      <section class="section section--callbcak">
+      <section class="section section--about">
         <div class="container">
-          <h2 class="title title--h2">Обратная связь</h2>
+          <h1 class="title">
+            <span class="large">«Омский бекон»</span>
+            <span>Полный цикл производства</span>
+          </h1>
 
-          <script>
-            // ОТПРАВКА ФОРМЫ КУДА ЛИБО
-            const onCallbackFormSubmit = e => {
-              e.preventDefault();
-              popup.open('ok');
-            };
-          </script>
+          <ul class="about grid grid--col3">
+            <li>
+              <div class="article-image">
+                <img src="../assets/img/hero/slide1.webp" alt="Random image" />
+                <h2 class="title">От поля <br />до полки</h2>
+              </div>
+              <p class="about__text">
+                «Омский бекон» обеспечивает высокие гарантии стабильного качества за&nbsp;счет контроля всех этапов производственного цикла
+              </p>
+            </li>
+            <li>
+              <div class="article-image">
+                <img src="../assets/img/hero/slide1.webp" alt="Random image" />
+                <h2 class="title">Свежее <br />охлажденное мясо</h2>
+              </div>
+              <p class="about__text">
+                Вся продукция бренда «Омский бекон» изготавливается из&nbsp;свежего мяса с&nbsp;собственных ферм, расположенных в&nbsp;Омской области
+              </p>
+            </li>
+            <li>
+              <div class="article-image">
+                <img src="../assets/img/hero/slide1.webp" alt="Random image" />
+                <h2 class="title">Широкий <br />ассортимент</h2>
+              </div>
+              <p class="about__text">
+                Создаем вкус более 80 лет! В&nbsp;ассортиментной линейке предприятия на&nbsp;сегодня более 250 наименований, подходящих для&nbsp;самых
+                разнообразных кулинарных экспериментов
+              </p>
+            </li>
+          </ul>
 
-          <form action="#" enctype="multipart/form-data" class="form" novalidate onsubmit="onCallbackFormSubmit(event)">
-            <label class="label">
-              <select name="subject" class="input input--select placeholder" required>
-                <option value="" disabled selected hidden>ТЕМА*</option>
-                <option value="Тема 1">Тема 1</option>
-                <option value="Тема 2">Тема 2</option>
-                <option value="Тема 3">Тема 3</option>
-              </select>
-              <span class="input-icon">
-                <svg width="14" height="7"><use href="#select-arrow" /></svg>
-              </span>
-            </label>
-            <label class="label label--textarea">
-              <textarea name="message" class="textarea" placeholder="Сообщение*" required></textarea>
-            </label>
-            <label class="label">
-              <input type="text" name="city" class="input" placeholder="Город*" required />
-            </label>
-            <label class="label">
-              <input type="text" name="name" class="input" placeholder="ФИО*" required />
-            </label>
-            <label class="label label--forFile">
-              <svg width="26" height="23"><use href="#input-file" /></svg>
-              <input type="file" name="file" class="input input--file" required />
-              <span class="file-placeholder">ПРИКРЕПИТЕ ФАЙЛ</span>
-            </label>
-            <label class="label">
-              <input type="tel" name="phone" class="input" placeholder="Телефон*" required />
-            </label>
-            <label class="label">
-              <input type="email" name="email" class="input" placeholder="Почта*" required />
-            </label>
-            <div class="label">
-              <button type="submit" class="button full">Отправить сообщение</button>
-            </div>
+          <h2 class="title">НЕМНОГО ЛЮБОПЫТНЫХ ФАКТОВ</h2>
 
-            <span class="form__info">
-              Отправляя свои контактные данные вы соглашаетесь с политикой конфиденциальности <br />Все поля обязательны к заполнению*
-            </span>
-          </form>
+          <ul class="facts grid grid--col3">
+            <li>
+              <img src="../assets/img/svg/fact1.svg" alt="" />
+              <h3 class="title">Каждый <br />4-ый Сибиряк</h3>
+              <p class="about__text">раз в месяц ест сосиски <br />от «Омского бекона»</p>
+            </li>
+            <li>
+              <img src="../assets/img/svg/fact2.svg" alt="" />
+              <h3 class="title">1 100 000 <br />бутербродов</h3>
+              <p class="about__text">можно ежемесячно сделать с&nbsp;ветчиной «Омский бекон» — хватит на&nbsp;каждого омича!</p>
+            </li>
+            <li>
+              <img src="../assets/img/svg/fact3.svg" alt="" />
+              <h3 class="title">88 000 <br />колбасок-гриль</h3>
+              <p class="about__text">
+                в месяц производит «Омский бекон». Если их все выложить на&nbsp;мангал, то&nbsp;можно провести гриль-вечеринку у&nbsp;Обского моря
+                в&nbsp;Новосибирске!
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
     </main>

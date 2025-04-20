@@ -1,0 +1,9 @@
+.grid {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 30px;
+  li {
+    width: calc((100% - 60px) / 3);
+  }
+}
