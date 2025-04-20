@@ -1,10 +1,21 @@
 .text-content {
   display: flex;
   position: relative;
-  gap: 20px;
+  gap: 12px;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
+  text-align: left;
+
+  &.align-center {
+    justify-content: center;
+    align-items: center;
+    > * {
+      text-align: center;
+    }
+  }
 }
 
 .title {
@@ -13,10 +24,27 @@
   line-height: 1;
   letter-spacing: -1.24px;
   text-transform: uppercase;
+  text-align: left;
+
+  &.title--h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    letter-spacing: -0.84px;
+  }
+
+  &.title--h3 {
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.48px;
+    text-align: center;
+  }
 }
 
 .subtitle {
   display: block;
-  font-size: myclamp(14px, 16px, 1440px, 1440px);
-  line-height: 1.4;
+  text-align: left;
+  font-size: 18px;
+  font-family: var(--600);
+  line-height: 1.36;
+  letter-spacing: -0.36px;
 }

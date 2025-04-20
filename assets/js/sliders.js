@@ -2,20 +2,54 @@ const sliders = document.querySelectorAll('[data-slider]');
 const heroSlider = document.querySelector('.swiper--hero');
 const heroSliderThumb = document.querySelector('.swiper--thumb');
 
-export const slidersInit = () => {
+export const initSliders = () => {
   if (sliders.length > 0) {
     sliders.forEach(sliderWrapper => {
       const swiper = sliderWrapper.querySelector('.swiper');
-      const { effect = 'slide', speed = '600' } = sliderWrapper.dataset;
+      const { effect = 'slide', speed = '600', spaceBetween = '0,0,0', slidesPerView = '1,1,1', slidesPerGroup = '1,1,1' } = sliderWrapper.dataset;
+
+      const arrowPrev = sliderWrapper.querySelector('[data-arrow-prev]');
+      const arrowNext = sliderWrapper.querySelector('[data-arrow-next]');
+      const pagination = sliderWrapper.querySelector('[data-pagination]');
+
       const options = {
         allowTouchMove: true,
         effect,
         speed,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: true,
+        breakpoints: {
+          0: {
+            slidesPerView: Number(slidesPerView.split(',')[2]),
+            slidesPerGroup: Number(slidesPerGroup.split(',')[2]),
+            spaceBetween: Number(spaceBetween.split(',')[2]),
+          },
+          768: {
+            slidesPerView: Number(slidesPerView.split(',')[1]),
+            slidesPerGroup: Number(slidesPerGroup.split(',')[1]),
+            spaceBetween: Number(spaceBetween.split(',')[1]),
+          },
+          1280: {
+            slidesPerView: Number(slidesPerView.split(',')[0]),
+            slidesPerGroup: Number(slidesPerGroup.split(',')[0]),
+            spaceBetween: Number(spaceBetween.split(',')[0]),
+          },
         },
       };
+
+      if (arrowPrev && arrowNext) {
+        options.navigation = {
+          prevEl: arrowPrev,
+          nextEl: arrowNext,
+        };
+      }
+
+      if (pagination) {
+        options.pagination = {
+          el: pagination,
+          clickable: true,
+          dynamicBullets: true,
+        };
+      }
+
       new Swiper(swiper, options);
     });
   }

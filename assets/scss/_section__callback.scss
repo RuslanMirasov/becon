@@ -1,0 +1,29 @@
+.section--callbcak {
+  padding: 40px 0px 60px 0px;
+
+  .form {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 24px 30px;
+    margin-top: 30px;
+    .label {
+      width: calc((100% - 60px) / 3);
+      &.label--textarea {
+        width: calc(66.666666% - 15px);
+      }
+    }
+    .form__info {
+      display: block;
+      width: 100%;
+      opacity: 1;
+      font-size: 16px;
+      line-height: 1.2;
+      text-align: left;
+      color: var(--grey-darker);
+    }
+  }
+}

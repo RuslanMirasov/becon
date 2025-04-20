@@ -142,22 +142,33 @@ export const popup = {
     return window.innerWidth - document.documentElement.clientWidth;
   },
 
+  _lockedScroll() {},
+
   _adjustFixedElements(scrollbarWidth) {
     document.querySelectorAll('[data-fixed]').forEach(el => {
       const style = getComputedStyle(el);
 
       if (scrollbarWidth === 0) {
         el.style.paddingRight = '';
+
         if (el.dataset.popupRestoreRight !== undefined) {
           el.style.right = el.dataset.popupRestoreRight;
           delete el.dataset.popupRestoreRight;
         }
+
+        return;
+      }
+
+      if (style.right === '0px') {
+        if (el.dataset.popupRestoreRight === undefined) {
+          el.dataset.popupRestoreRight = el.style.right || '0px';
+        }
+        el.style.right = `${scrollbarWidth}px`;
         return;
       }
 
       if (el.offsetWidth === document.documentElement.clientWidth) {
         el.style.paddingRight = `${scrollbarWidth}px`;
-        return;
       }
     });
   },

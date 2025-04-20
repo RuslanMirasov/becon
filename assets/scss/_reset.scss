@@ -33,7 +33,6 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
   object-fit: cover;
   user-select: none;
 }
@@ -52,6 +51,7 @@ strong {
 }
 
 button {
+  position: relative;
   border: none;
   cursor: pointer;
   background: none;
@@ -70,4 +70,35 @@ menu {
 
 a {
   text-decoration: none;
+}
+
+.blue-gradient {
+  background: var(--color);
+  background: radial-gradient(circle, var(--gradient) 0%, var(--color) 75%);
+}
+
+.custom-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(26, 38, 99, 0.1);
+  border-radius: 2px;
+  background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(26, 38, 99, 0.1);
+  border-radius: 2px;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color) rgba(26, 38, 99, 0.1);
 }

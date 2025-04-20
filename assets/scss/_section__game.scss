@@ -1,0 +1,153 @@
+.section--game {
+  padding: 84px 0px;
+  margin-top: -42px;
+  margin-bottom: -42px;
+  overflow: hidden;
+}
+
+.game-banner {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  position: relative;
+  z-index: 1;
+  padding: 50px 0px;
+  color: var(--white);
+  min-height: 442px;
+
+  .blue-gradient {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 500px;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: 1s;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  .text-content {
+    .title {
+      line-height: 0.85;
+      margin-bottom: 13px;
+    }
+    .button {
+      min-width: 298px;
+    }
+  }
+
+  .text-content--intro {
+    position: absolute;
+    transition: 1s;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% + 294px);
+    height: 100%;
+    left: -147px;
+    top: 0px;
+    z-index: 0;
+    border-radius: 50px;
+  }
+
+  &:before {
+    transition: 1s;
+    background: url('../img/game-bg.webp') no-repeat center center/cover;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  &:after {
+    background: var(--color);
+    z-index: -1;
+  }
+
+  &.intro {
+    .text-content--intro,
+    &:before {
+      opacity: 1;
+      pointer-events: all;
+      visibility: visible;
+    }
+  }
+}
+
+.game-images {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 500px;
+  height: 620px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  transition: 1s;
+  pointer-events: none;
+  opacity: 1;
+  z-index: 2;
+  img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.text-content--result {
+  max-width: 660px;
+  margin-right: auto;
+  position: relative;
+  transform: translate(10%, 0%);
+  pointer-events: none;
+  opacity: 0;
+  transition: 1s;
+  z-index: 1;
+  p {
+    font-family: var(--500);
+    color: var(--grey);
+  }
+  .button {
+    margin-top: 10px;
+  }
+}
+
+.intro {
+  .game-images,
+  .blue-gradient {
+    opacity: 0;
+  }
+}
+
+.finish {
+  .game-images,
+  .blue-gradient {
+    transform: translate(28%, 0%);
+  }
+  .text-content--result {
+    transform: translate(0%, 0%);
+    opacity: 1;
+    pointer-events: all;
+  }
+}

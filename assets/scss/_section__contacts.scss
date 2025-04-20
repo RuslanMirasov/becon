@@ -1,0 +1,91 @@
+.map {
+  width: 100%;
+  height: 450px;
+  background: #eee url('../img/map.webp') no-repeat center top/cover;
+
+  [class*='ground-pane'] {
+    filter: grayscale(100%) brightness(100%) !important;
+  }
+}
+
+.map-list {
+  display: flex;
+  position: relative;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50px 50px 0px 0px;
+  border: 4px solid var(--brown);
+  border-bottom: none;
+  padding: 38px 50px 0px 50px;
+  max-width: 1010px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -110px;
+  margin-bottom: 110px;
+  background: var(--white);
+
+  &:before {
+    content: '';
+    width: calc(100% + 8px);
+    height: 80%;
+    position: absolute;
+    left: -4px;
+    bottom: 0px;
+    background: #fff;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0.1) 100%);
+    z-index: 0;
+  }
+
+  > ul {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    gap: 0px 30px;
+    width: 100%;
+    flex-wrap: wrap;
+    font-family: var(--600);
+
+    > li {
+      width: calc((100% - 60px) / 3);
+      text-align: left;
+      ul {
+        li {
+          list-style-image: url('../img/svg/pin-li.svg');
+          list-style-position: inside;
+          margin-bottom: 5px;
+          span {
+            display: inline-block;
+            position: relative;
+            top: -3px;
+            font-size: 14px;
+            letter-spacing: -0.3px;
+            line-height: 1.36;
+            color: var(--grey-dark);
+            cursor: pointer;
+            text-decoration: underline;
+            &:hover {
+              color: var(--color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contacts-link {
+  font-size: 32px;
+  position: relative;
+  z-index: 1;
+  line-height: 0.9;
+  color: var(--brown);
+  a {
+    display: inline-block;
+    font-size: 32px;
+    &:before,
+    &:after {
+      background: var(--brown);
+    }
+  }
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
+    <meta name="theme-color" content="#1A2663" />
+    <meta name="description" content="Омский бекон" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <title>О бренде</title>
+  </head>
+  <body class="body night">
+    <!--PRELOADER-->
+    <div class="preloader" data-preloader>
+      <span>
+        <img src="../assets/img/favicon.svg" alt="" />
+      </span>
+    </div>
+
+    <div class="fixed-button">
+      <button class="button button--markets" data-popup-open="markets">Где купить</button>
+    </div>
+
+    <!--HEADER-->
+    <header class="header" data-fixed>
+      <div class="header__content">
+        <div class="header__logo">
+          <a href="../" class="logo" aria-label="Омский бекон">
+            <img src="../assets/img/svg/logo.svg" alt="" width="80" height="66" loading="eager" />
+          </a>
+        </div>
+
+        <nav class="navigation">
+          <ul class="menu">
+            <li><a href="../catalog" class="menu__link">Продукция</a></li>
+            <li><a href="../recipes" class="menu__link">Рецепты</a></li>
+            <li><a href="../about" class="menu__link active">О бренде</a></li>
+            <li><a href="../distributors" class="menu__link">Дистрибьюторы</a></li>
+            <li><a href="../contacts" class="menu__link">Контакты</a></li>
+            <li>
+              <ul class="socials">
+                <li>
+                  <a href="https://vk.com/omskiy.bacon" target="_blank"> <img src="../assets/img/socials/vk.webp" alt="" /> </a>
+                </li>
+                <li>
+                  <a href="https://app.box.com/s/ecbi2021cj077xrbalwhabdpht4shzil" target="_blank">
+                    <img src="../assets/img/socials/youtube.webp" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://music.yandex.ru/artist/7525778" target="_blank"> <img src="../assets/img/socials/vk_music.webp" alt="" /> </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="burger">
+          <span>Меню бургер</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <!--PARALLAX-->
+      <section class="section section--parallax no-margin">
+        <div class="parallax">
+          <img src="../assets/img//parallax/background.webp" alt="" />
+          <img src="../assets/img//parallax/text.webp" alt="" data-parallax="0.2" />
+          <img src="../assets/img//parallax/forground.webp" alt="" />
+        </div>
+      </section>
+
+      <!--БЕГУЩАЯ СТРОКА-->
+      <div class="marquee">
+        <div class="marquee__inner">
+          <span>СДЕЛАНО В СИБИРИ&nbsp;&nbsp;СДЕЛАНО В СИБИРИ</span>
+          <span>СДЕЛАНО В СИБИРИ&nbsp;&nbsp;СДЕЛАНО В СИБИРИ</span>
+        </div>
+      </div>
+
+      <!--ФОРМА ОБРАТНОЙ СВЯЗИ-->
+      <section class="section section--callbcak">
+        <div class="container">
+          <h2 class="title title--h2">Обратная связь</h2>
+
+          <script>
+            // ОТПРАВКА ФОРМЫ КУДА ЛИБО
+            const onCallbackFormSubmit = e => {
+              e.preventDefault();
+              popup.open('ok');
+            };
+          </script>
+
+          <form action="#" enctype="multipart/form-data" class="form" novalidate onsubmit="onCallbackFormSubmit(event)">
+            <label class="label">
+              <select name="subject" class="input input--select placeholder" required>
+                <option value="" disabled selected hidden>ТЕМА*</option>
+                <option value="Тема 1">Тема 1</option>
+                <option value="Тема 2">Тема 2</option>
+                <option value="Тема 3">Тема 3</option>
+              </select>
+              <span class="input-icon">
+                <svg width="14" height="7"><use href="#select-arrow" /></svg>
+              </span>
+            </label>
+            <label class="label label--textarea">
+              <textarea name="message" class="textarea" placeholder="Сообщение*" required></textarea>
+            </label>
+            <label class="label">
+              <input type="text" name="city" class="input" placeholder="Город*" required />
+            </label>
+            <label class="label">
+              <input type="text" name="name" class="input" placeholder="ФИО*" required />
+            </label>
+            <label class="label label--forFile">
+              <svg width="26" height="23"><use href="#input-file" /></svg>
+              <input type="file" name="file" class="input input--file" required />
+              <span class="file-placeholder">ПРИКРЕПИТЕ ФАЙЛ</span>
+            </label>
+            <label class="label">
+              <input type="tel" name="phone" class="input" placeholder="Телефон*" required />
+            </label>
+            <label class="label">
+              <input type="email" name="email" class="input" placeholder="Почта*" required />
+            </label>
+            <div class="label">
+              <button type="submit" class="button full">Отправить сообщение</button>
+            </div>
+
+            <span class="form__info">
+              Отправляя свои контактные данные вы соглашаетесь с политикой конфиденциальности <br />Все поля обязательны к заполнению*
+            </span>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <footer class="footer">
+      <a href="../" class="logo" aria-label="Омский бекон">
+        <img src="../assets/img/logo.webp" alt="" width="80" height="66" loading="eager" />
+      </a>
+
+      <address class="address">
+        <span>Юридический адрес:</span>
+        <a href="tel:88007007420">646906, Омская область, г.&nbsp;Калачинск, ул.&nbsp;Строительная 11</a>
+      </address>
+
+      <ul class="footer__menu">
+        <li><a href="../catalog">Продукция</a></li>
+        <li><a href="../recipes">Рецепты</a></li>
+        <li><a href="../about">О бренде</a></li>
+        <li>
+          <span>Горячая линия:&nbsp;</span><br />
+          <a href="tel:88007007420">8 800 700 74 20</a>
+        </li>
+      </ul>
+    </footer>
+
+    <!--POPUPS-->
+    <div class="backdrop" data-backdrop>
+      <div class="popup" data-popup>
+        <!--popup markets-->
+        <div class="popup-content" id="markets">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="popup-title">Где купить</h2>
+          <ul class="markets-list custom-scrollbar">
+            <li>
+              <a href=""><img src="../assets/img/markets/omsk_becon.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/samokat.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/kuper.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/yandex_lavka.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/metro.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/lenta.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/okey.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/perekrestok.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/magnit.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/pyaterochka.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/yarche.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/spar.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/bistronom.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/monetka.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/begemag.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/anix.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/maria_ra.webp" alt="" target="_blank" /></a>
+            </li>
+            <li>
+              <a href=""><img src="../assets/img/markets/ashan.webp" alt="" target="_blank" /></a>
+            </li>
+          </ul>
+        </div>
+
+        <!--popup form send secsses-->
+        <div class="popup-content" id="ok">
+          <button class="popup-close" data-popup-close></button>
+          <h2 class="popup-title">Сообщение отправлено</h2>
+          <p class="popup-subtitle">Наш менеджер свяжется с&nbsp;Вами&nbsp;в&nbsp;ближайшее время</p>
+          <button class="button small" data-popup-close>Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="select-arrow" viewBox="0 0 23 14" preserveAspectRatio="none" fill="none">
+        <path d="M1 1.25L11.5 11.75L22 1.25" stroke="currentColor" stroke-width="2" />
+      </symbol>
+
+      <symbol id="input-file" viewBox="0 0 26 23" preserveAspectRatio="none" fill="none">
+        <path
+          d="M5.12577 6.41053C6.98648 4.60412 8.95978 2.89392 10.8959 1.16425C11.8466 0.596099 12.8785 1.78396 12.1078 2.58808C8.44092 6.77365 -1.93168 12.4598 3.69223 18.9065C6.35386 21.9569 8.95166 21.4781 11.8164 19.0257C15.597 15.7885 18.9737 11.5812 22.7288 8.25933C23.4728 7.38075 24.3736 6.12073 23.9116 4.90881C23.7189 4.4048 21.9836 2.68659 21.4868 2.37617C19.2952 1.00503 17.0898 3.48384 15.5831 4.87445C12.6336 7.59724 9.8884 10.572 7.05497 13.4117C5.56686 15.5881 7.93947 17.564 9.94876 15.9237C12.5663 13.4712 15.0004 10.8206 17.6133 8.367C17.9813 8.02221 19.7317 6.32577 19.9697 6.22382C20.788 5.87216 21.6168 6.97296 21.0399 7.74043C17.8942 10.5766 15.0445 14.0176 11.8745 16.7943C10.1647 18.2914 8.15421 19.2948 6.06715 17.7072C4.13912 16.241 4.19136 13.627 5.77464 11.9203C9.25114 8.8481 12.3748 4.9489 15.8745 1.95578C19.1699 -0.863237 21.7862 -0.614669 24.6417 2.58579C26.7961 5.0016 26.1763 7.23184 24.2366 9.5205C20.5547 12.871 17.2035 16.8183 13.4995 20.1161C9.66901 23.5274 5.88608 24.3567 2.18207 20.1677C-2.43778 14.9409 1.10604 10.312 5.12461 6.41168L5.12577 6.41053Z"
+          fill="currentColor"
+        />
+      </symbol>
+    </svg>
+
+    <script src="../assets/js/parallax.js" type="module"></script>
+    <script src="../assets/js/forms.js" type="module"></script>
+    <script src="../assets/js/scripts.js" type="module"></script>
+  </body>
+</html>

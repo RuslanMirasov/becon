@@ -15,7 +15,7 @@ body.locked {
   height: 100%;
   z-index: 1000;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   padding: 50px 20px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -59,8 +59,10 @@ body.locked {
   position: absolute;
   right: 20px;
   top: 20px;
-  width: 22px;
-  height: 22px;
+  width: 38px;
+  height: 38px;
+  background: #e8e8e8;
+  border-radius: 38px;
   transition: 0.3s;
   transform: rotate(0deg);
   z-index: 2;
@@ -69,21 +71,17 @@ body.locked {
     content: '';
     position: absolute;
     pointer-events: none;
-    width: 100%;
-    height: 2px;
+    width: 60%;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--color);
+    transition: 0s;
   }
   &:before {
     transform: rotate(45deg);
   }
   &:after {
     transform: rotate(-45deg);
-  }
-  &:hover {
-    transform: rotate(90deg);
-  }
-  @media (max-width: 1365px) {
-    right: 20px;
-    top: 20px;
   }
 }
 
@@ -101,37 +99,79 @@ body.locked {
 }
 
 .popup-content {
-  background: var(--color);
-  padding: 55px 34px 40px 34px;
   user-select: none;
-  width: 355px;
+  border-radius: 30px;
+  background: var(--white);
+  padding: 50px 40px 40px 40px;
+  .button {
+    margin-top: 30px;
+  }
   @media (max-width: 419px) {
     width: 100%;
-    padding: 55px 20px 40px 20px;
-  }
-  .form {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 50px;
   }
 }
 
 .popup-title {
-  font-size: 32px;
+  font-size: 52px;
+  line-height: 0.9;
   color: inherit;
   text-align: center;
-  line-height: 1;
   text-transform: uppercase;
 }
 
 .popup-subtitle {
-  font-size: 16px;
-  color: inherit;
-  text-align: center;
-  line-height: 1.2;
-  margin-top: 16px;
-  margin-bottom: -40px;
+  font-size: 14px;
+  line-height: 1.36;
+  letter-spacing: -0.28px;
   &.no-margin {
     margin-bottom: 0px;
+  }
+}
+
+#ok {
+  width: 500px;
+  .popup-subtitle {
+    display: block;
+    margin: 0 auto;
+    margin-top: 14px;
+    text-align: center;
+    max-width: 300px;
+  }
+  .button {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+
+#markets {
+  width: 758px;
+  padding: 40px 20px;
+
+  .markets-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-top: 28px;
+    padding: 0px 40px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 370px;
+    gap: 12px 18px;
+    li {
+      display: block;
+      width: calc((100% - 36px) / 3);
+      overflow: hidden;
+      z-index: 1;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+      a,
+      img {
+        width: 100%;
+      }
+    }
   }
 }
