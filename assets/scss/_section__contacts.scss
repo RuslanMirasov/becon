@@ -53,7 +53,7 @@
         li {
           list-style-image: url('../img/svg/pin-li.svg');
           list-style-position: inside;
-          margin-bottom: 5px;
+          margin-bottom: 6px;
           span {
             display: inline-block;
             position: relative;
@@ -61,7 +61,7 @@
             font-size: 14px;
             letter-spacing: -0.3px;
             line-height: 1.36;
-            color: var(--grey-dark);
+            color: #828282;
             cursor: pointer;
             text-decoration: underline;
             &:hover {

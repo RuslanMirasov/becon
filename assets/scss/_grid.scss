@@ -2,8 +2,18 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  gap: 30px;
-  li {
-    width: calc((100% - 60px) / 3);
+
+  &.grid--col3 {
+    gap: 30px;
+    > li {
+      width: calc((100% - 60px) / 3);
+    }
+  }
+
+  &.grid--col4 {
+    gap: 35px;
+    > li {
+      width: calc((100% - 105px) / 4);
+    }
   }
 }

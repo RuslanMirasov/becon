@@ -1,0 +1,30 @@
+.section--products {
+  padding: 65px 0px 92px 0px;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+  gap: 40px;
+  > div {
+    width: calc(50% - 20px);
+  }
+}
+
+.product__slider {
+  .swiper-slide {
+    height: 500px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.product__info {
+  display: flex;
+}

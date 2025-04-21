@@ -1,6 +1,7 @@
 export const popup = {
   _backdrop: null,
   _popup: null,
+  _scrollY: 0,
   _isOpening: false,
   _isAnimating: false,
 
@@ -27,59 +28,100 @@ export const popup = {
       return;
     }
 
-    const isVisible = this._popup.classList.contains('visible');
+    const currentContent = this._popup.querySelector('.popup-content[style*="display: block"]');
 
-    if (isVisible) {
-      this._popup.classList.remove('visible');
-      await this._waitForTransition(this._backdrop, 'opacity');
-      this._popup.querySelectorAll('.popup-content').forEach(el => {
-        el.style.display = 'none';
-      });
-      newContent.style.display = 'block';
-      this._popup.classList.add('visible');
+    if (currentContent && currentContent !== newContent) {
+      await this.close();
+    }
+
+    const alreadyVisible = this._popup.classList.contains('visible');
+
+    if (alreadyVisible) {
+      await this._switchContent(newContent);
     } else {
-      // Сначала показываем нужный
-      this._popup.querySelectorAll('.popup-content').forEach(el => {
-        el.style.display = el.id === id ? 'block' : 'none';
-      });
-
-      const scrollbarWidth = this._getScrollbarWidth();
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-      document.body.classList.add('locked');
-      this._adjustFixedElements(scrollbarWidth);
-
-      this._backdrop.classList.add('active');
-      this._popup.classList.add('visible');
-
-      await this._waitForTransition(this._backdrop, 'opacity');
+      await this._showContent(newContent);
     }
 
     this._isOpening = false;
   },
 
   async close() {
-    if (!this._popup || !this._backdrop || this._isAnimating) return;
+    if (this._isOpening || this._isAnimating) return;
+    this._isOpening = true;
 
     this._popup.classList.remove('visible');
     this._backdrop.classList.remove('active');
 
-    await this._waitForTransition(this._backdrop, 'opacity');
+    await this._waitForTransition(this._backdrop);
 
+    this._hideAllContent();
+    this._unlockScroll();
+
+    this._isOpening = false;
+  },
+
+  _bindCloseEvents() {
+    document.addEventListener('click', e => {
+      if (this._isOpening || this._isAnimating) return;
+
+      const openBtn = e.target.closest('[data-popup-open]');
+      if (openBtn) {
+        e.preventDefault();
+        this.open(openBtn.dataset.popupOpen);
+        return;
+      }
+
+      const isCloseTarget = e.target === this._backdrop || e.target.hasAttribute('data-popup-close');
+      if (isCloseTarget) {
+        this.close();
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if ((this._isOpening || this._isAnimating) && e.key === 'Escape') {
+        return;
+      }
+      if (e.key === 'Escape') {
+        this.close();
+      }
+    });
+  },
+
+  async _switchContent(newContent) {
+    this._popup.classList.remove('visible');
+    await this._waitForTransition(this._backdrop);
+    this._hideAllContent();
+    newContent.style.display = 'block';
+    this._popup.classList.add('visible');
+    await this._waitForTransition(this._backdrop);
+  },
+
+  async _showContent(newContent) {
+    this._hideAllContent();
+    newContent.style.display = 'block';
+
+    const popupHeight = newContent.offsetHeight;
+    const shouldLockScroll = popupHeight <= window.innerHeight - 100;
+
+    this._lockScroll(shouldLockScroll);
+
+    this._backdrop.classList.add('active');
+    this._popup.classList.add('visible');
+
+    await this._waitForTransition(this._backdrop);
+  },
+
+  _hideAllContent() {
     this._popup.querySelectorAll('.popup-content').forEach(el => {
       el.style.display = 'none';
     });
-
-    document.body.classList.remove('locked');
-    document.body.style.paddingRight = '';
-    this._adjustFixedElements(0);
   },
 
   async _waitForTransition(element, propertyName = 'opacity') {
     this._isAnimating = true;
 
     return new Promise(resolve => {
-      const computed = getComputedStyle(element);
-      const duration = parseFloat(computed.transitionDuration) * 1000;
+      const duration = parseFloat(getComputedStyle(element).transitionDuration) * 1000;
 
       if (duration === 0) {
         this._isAnimating = false;
@@ -87,89 +129,66 @@ export const popup = {
         return;
       }
 
-      let finished = false;
-
       const handler = e => {
-        if (e.propertyName !== propertyName) return;
-        finished = true;
-        element.removeEventListener('transitionend', handler);
-        this._isAnimating = false;
-        resolve();
+        if (e.propertyName === propertyName) {
+          element.removeEventListener('transitionend', handler);
+          this._isAnimating = false;
+          resolve();
+        }
       };
 
       element.addEventListener('transitionend', handler, { once: true });
 
       setTimeout(() => {
-        if (!finished) {
-          element.removeEventListener('transitionend', handler);
-          this._isAnimating = false;
-          resolve();
-        }
+        element.removeEventListener('transitionend', handler);
+        this._isAnimating = false;
+        resolve();
       }, duration + 50);
     });
   },
 
-  _bindCloseEvents() {
-    document.addEventListener('click', e => {
-      const openBtn = e.target.closest('[data-popup-open]');
-      if (!openBtn || this._isAnimating) return;
+  _lockScroll() {
+    this._scrollY = window.scrollY;
 
-      const popupId = openBtn.dataset.popupOpen;
-      if (popupId) {
-        e.preventDefault();
-        this.open(popupId);
-      }
-    });
+    const header = document.querySelector('.header');
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-    document.addEventListener('keydown', e => {
-      if (this._isAnimating) return;
-      if (e.key === 'Escape') {
-        this.close();
-      }
-    });
+    document.body.style.position = 'fixed';
+    document.body.style.top = '0';
+    document.body.style.left = '0';
+    document.body.style.right = `${scrollbarWidth}px`;
+    document.body.style.width = `calc(100% - ${scrollbarWidth}px)`;
+    document.body.style.overflow = 'hidden';
 
-    if (this._backdrop) {
-      this._backdrop.addEventListener('click', e => {
-        if (this._isAnimating) return;
-        if (e.target === this._backdrop || e.target.hasAttribute('data-popup-close')) {
-          this.close();
-        }
-      });
+    if (header) {
+      header.style.width = `calc(100% - ${scrollbarWidth}px)`;
     }
-  },
 
-  _getScrollbarWidth() {
-    return window.innerWidth - document.documentElement.clientWidth;
-  },
-
-  _lockedScroll() {},
-
-  _adjustFixedElements(scrollbarWidth) {
-    document.querySelectorAll('[data-fixed]').forEach(el => {
-      const style = getComputedStyle(el);
-
-      if (scrollbarWidth === 0) {
-        el.style.paddingRight = '';
-
-        if (el.dataset.popupRestoreRight !== undefined) {
-          el.style.right = el.dataset.popupRestoreRight;
-          delete el.dataset.popupRestoreRight;
-        }
-
-        return;
-      }
-
-      if (style.right === '0px') {
-        if (el.dataset.popupRestoreRight === undefined) {
-          el.dataset.popupRestoreRight = el.style.right || '0px';
-        }
-        el.style.right = `${scrollbarWidth}px`;
-        return;
-      }
-
-      if (el.offsetWidth === document.documentElement.clientWidth) {
-        el.style.paddingRight = `${scrollbarWidth}px`;
-      }
+    ['main', 'footer'].forEach(tag => {
+      const el = document.body.querySelector(`:scope > ${tag}`);
+      if (el) el.style.top = `-${this._scrollY}px`;
     });
+  },
+
+  _unlockScroll() {
+    const header = document.querySelector('.header');
+
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+
+    if (header) {
+      header.style.width = '100%';
+    }
+
+    ['main', 'footer'].forEach(tag => {
+      const el = document.body.querySelector(`:scope > ${tag}`);
+      if (el) el.style.top = '';
+    });
+
+    window.scrollTo(0, this._scrollY);
   },
 };

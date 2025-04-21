@@ -1,4 +1,3 @@
-import { throttle } from './helpers.js';
 const parallaxElements = document.querySelectorAll('[data-parallax]');
 
 const updateParallax = () => {

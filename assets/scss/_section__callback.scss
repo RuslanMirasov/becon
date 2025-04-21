@@ -24,6 +24,9 @@
       line-height: 1.2;
       text-align: left;
       color: var(--grey-darker);
+      a {
+        text-decoration: underline;
+      }
     }
   }
 }
