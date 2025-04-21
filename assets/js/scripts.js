@@ -1,4 +1,5 @@
 import { popup } from './popup.js';
+import { fixHeaderOnScroll, hidePreloader } from './helpers.js';
 import { initSliders } from './sliders.js';
 
 const initNavigationMenu = () => {
@@ -13,17 +14,9 @@ const initNavigationMenu = () => {
   burger.addEventListener('click', toggleMenu);
 };
 
-const hidePreloader = () => {
-  const preloader = document.querySelector('[data-preloader]');
-  if (!preloader) return;
-
-  setTimeout(() => {
-    preloader.classList.add('hidden');
-  }, 200);
-};
-
 popup.init();
 window.popup = popup;
 initNavigationMenu();
 initSliders();
+fixHeaderOnScroll();
 hidePreloader();
