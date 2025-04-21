@@ -2314,6 +2314,11 @@ body.locked {
 
 .product__slider .swiper-slide {
   height: 500px;
+  transition: 0.6s;
+  opacity: 0;
+}
+.product__slider .swiper-slide.swiper-slide-active {
+  opacity: 1;
 }
 .product__slider img {
   width: 100%;
@@ -2325,5 +2330,67 @@ body.locked {
 .product__info {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
+}
+
+.ingredients {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
+}
+.ingredients > * {
+  padding: 16px 24px;
+  border: 2px solid var(--color);
+  border-radius: 16px;
+}
+.ingredients .title {
+  display: block;
+  position: relative;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.36px;
+}
+.ingredients .title:before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  right: 20px;
+  top: 11px;
+  background: url("../img/svg/ingredients-arrow.svg") no-repeat center center/cover;
+}
+.ingredients ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+.ingredients ul li {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+.ingredients ul li:first-child {
+  margin-bottom: 2px;
+}
+.ingredients ul li:last-child {
+  margin-top: 2px;
+}
+.ingredients ul li span {
+  font-size: 10px;
+  line-height: 1.4;
+  font-family: var(--600);
+  opacity: 0.6;
+}
+.ingredients ul li p {
+  font-size: 18px;
+  line-height: 1;
+}
+.ingredients ul li p:last-child {
+  opacity: 0.6;
 }
