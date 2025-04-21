@@ -38,36 +38,34 @@
   }
 
   > ul {
-    display: flex;
+    columns: 3 275px;
+    column-gap: 30px;
     position: relative;
     z-index: 1;
-    gap: 0px 30px;
+    // gap: 0px 30px;
     width: 100%;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     font-family: var(--600);
 
     > li {
-      width: calc((100% - 60px) / 3);
+      //width: calc((100% - 60px) / 3);
       text-align: left;
-      ul {
-        li {
-          list-style-image: url('../img/svg/pin-li.svg');
-          list-style-position: inside;
-          margin-bottom: 6px;
-          span {
-            display: inline-block;
-            position: relative;
-            top: -3px;
-            font-size: 14px;
-            letter-spacing: -0.3px;
-            line-height: 1.36;
-            color: #828282;
-            cursor: pointer;
-            text-decoration: underline;
-            &:hover {
-              color: var(--color);
-            }
-          }
+
+      list-style-image: url('../img/svg/pin-li.svg');
+      list-style-position: inside;
+      margin-bottom: 6px;
+      span {
+        display: inline-block;
+        position: relative;
+        top: -3px;
+        font-size: 14px;
+        letter-spacing: -0.3px;
+        line-height: 1.36;
+        color: #828282;
+        cursor: pointer;
+        text-decoration: underline;
+        &:hover {
+          color: var(--color);
         }
       }
     }

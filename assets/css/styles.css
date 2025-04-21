@@ -639,10 +639,14 @@ a {
   letter-spacing: -0.48px;
   background: var(--white);
   color: var(--color);
-  transition: color 0.3s;
+  transition: 0.3s;
+}
+.button.go-back:before {
+  content: none;
 }
 .button.go-back:hover {
   color: var(--white);
+  background: var(--brown);
 }
 .button:before {
   content: "";
@@ -2149,24 +2153,22 @@ body.locked {
   z-index: 0;
 }
 .map-list > ul {
-  display: flex;
+  -moz-columns: 3 275px;
+       columns: 3 275px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
   position: relative;
   z-index: 1;
-  gap: 0px 30px;
   width: 100%;
-  flex-wrap: wrap;
   font-family: var(--600);
 }
 .map-list > ul > li {
-  width: calc((100% - 60px) / 3);
   text-align: left;
-}
-.map-list > ul > li ul li {
   list-style-image: url("../img/svg/pin-li.svg");
   list-style-position: inside;
   margin-bottom: 6px;
 }
-.map-list > ul > li ul li span {
+.map-list > ul > li span {
   display: inline-block;
   position: relative;
   top: -3px;
@@ -2177,7 +2179,7 @@ body.locked {
   cursor: pointer;
   text-decoration: underline;
 }
-.map-list > ul > li ul li span:hover {
+.map-list > ul > li span:hover {
   color: var(--color);
 }
 

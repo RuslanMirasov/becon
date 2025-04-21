@@ -54,9 +54,13 @@
     letter-spacing: -0.48px;
     background: var(--white);
     color: var(--color);
-    transition: color 0.3s;
+    transition: 0.3s;
+    &:before {
+      content: none;
+    }
     &:hover {
       color: var(--white);
+      background: var(--brown);
     }
   }
 
