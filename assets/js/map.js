@@ -38,22 +38,4 @@ function init() {
       });
     }
   });
-
-  // ==============================
-  // Покраска карты в серый (оставляя пины цветными)
-  // ==============================
-
-  setTimeout(() => {
-    const mapContainer = document.getElementById('map');
-    console.log('===== Содержимое #map: =====');
-    console.dir(mapContainer);
-
-    const allChildren = mapContainer.querySelectorAll('*');
-    allChildren.forEach((el, i) => {
-      const classList = el.className ? el.className.toString() : '';
-      console.log(`${i + 1}: <${el.tagName.toLowerCase()}>.${classList}`);
-    });
-  }, 1500);
-
-  // ==============================
 }

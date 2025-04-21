@@ -2324,4 +2324,6 @@ body.locked {
 
 .product__info {
   display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
