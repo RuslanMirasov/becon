@@ -1442,6 +1442,61 @@ body.locked {
   width: 100%;
 }
 
+#addresses {
+  padding: 0;
+  border-radius: 50px;
+  background: var(--color);
+  color: var(--white);
+  width: 1000px;
+  min-height: 800px;
+  overflow: hidden;
+}
+#addresses .title {
+  text-align: left;
+}
+#addresses .addresses__image {
+  width: 100%;
+}
+#addresses .addresses__content {
+  display: block;
+  width: 100%;
+  padding: 30px 40px;
+}
+#addresses .addresses__description {
+  display: block;
+  -moz-columns: 2 440px;
+       columns: 2 440px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  font-family: var(--500);
+  font-size: 14px;
+  line-height: 1.36;
+  margin: 16px 0px;
+}
+#addresses .addresses__description p {
+  display: inline-block;
+  margin: 6px 0px;
+  color: var(--grey);
+}
+#addresses .addresses__list {
+  -moz-columns: 3 200px;
+       columns: 3 200px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  font-size: 14px;
+  line-height: 1.36;
+  margin: 16px 0px;
+}
+#addresses .addresses__list a {
+  display: inline-block;
+  font-family: var(--500);
+  padding: 6px 0px;
+  color: var(--grey);
+}
+#addresses .addresses__list a:hover {
+  color: var(--white);
+}
+
 .breadcrumbs {
   display: flex;
 }
