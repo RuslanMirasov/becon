@@ -1,0 +1,109 @@
+.section--recipeIngredients {
+  padding-top: 32px;
+  margin-bottom: -50px;
+}
+
+.ingredients-list {
+  columns: 2 300px;
+  column-gap: 100px;
+  list-style: none;
+  margin-top: 14px;
+  padding: 0;
+
+  li {
+    break-inside: avoid;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #cccccc;
+
+    span {
+      position: relative;
+      background: var(--white);
+      top: 2px;
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.2;
+      letter-spacing: -0.32px;
+      color: #828282;
+      padding: 0 10px;
+
+      &:first-child {
+        padding-left: 0;
+        max-width: calc(100% - 110px);
+      }
+
+      &:last-child {
+        padding-right: 0;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.resipe-steps-slider {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    height: 110%;
+    width: 100vw;
+    pointer-events: none;
+    z-index: 2;
+    top: -5%;
+  }
+
+  &:before {
+    right: calc(100% - 750px);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 400px);
+    transform: translate(100%, 0%);
+  }
+
+  &:after {
+    background: var(--white);
+    right: 100%;
+  }
+
+  .swiper-wrapper {
+    overflow: visible;
+  }
+
+  .swiper {
+    width: 750px;
+    height: 470px;
+    margin-left: 0px;
+    overflow: visible;
+
+    .swiper-slide {
+      border-radius: 50px;
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.resipe-description {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 24px;
+  margin-top: 28px;
+  margin-bottom: -50px;
+  li {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    line-height: 1.1;
+  }
+}

@@ -46,6 +46,19 @@
     min-height: 52px;
     padding: 10px 30px;
   }
+  &.go-back {
+    min-height: 40px;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: -0.48px;
+    background: var(--white);
+    color: var(--color);
+    transition: color 0.3s;
+    &:hover {
+      color: var(--white);
+    }
+  }
 
   &:before {
     content: '';
@@ -59,7 +72,7 @@
     background: #ac9657;
     background: linear-gradient(180deg, #ac9657 0%, #99823f 100%);
     z-index: -1;
-    transition: 0.3s;
+    transition: opacity 0.3s;
   }
 
   &:hover {

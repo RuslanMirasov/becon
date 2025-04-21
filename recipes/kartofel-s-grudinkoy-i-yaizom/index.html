@@ -2,19 +2,20 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/x-icon" href="./../assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./../../assets/img/favicon.ico" />
     <meta name="theme-color" content="#1A2663" />
     <meta name="description" content="Омский бекон" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./../assets/css/styles.min.css" />
-    <title>Рецепты</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./../../assets/css/styles.min.css" />
+    <title>Картофель с грудинкой и яйцом</title>
   </head>
   <body class="body night">
     <!--PRELOADER-->
     <div class="preloader" data-preloader>
       <span>
-        <img src="./../assets/img/favicon.svg" alt="" />
+        <img src="./../../assets/img/favicon.svg" alt="" />
       </span>
     </div>
 
@@ -26,30 +27,30 @@
     <header class="header" data-fixed>
       <div class="header__content">
         <div class="header__logo">
-          <a href="./../" class="logo" aria-label="Омский бекон">
-            <img src="./../assets/img/svg/logo.svg" alt="" width="80" height="66" loading="eager" />
+          <a href="./../../" class="logo" aria-label="Омский бекон">
+            <img src="./../../assets/img/svg/logo.svg" alt="" width="80" height="66" loading="eager" />
           </a>
         </div>
 
         <nav class="navigation">
           <ul class="menu">
-            <li><a href="./../catalog" class="menu__link">Продукция</a></li>
-            <li><a href="./../recipes" class="menu__link active">Рецепты</a></li>
-            <li><a href="./../about" class="menu__link">О бренде</a></li>
-            <li><a href="./../distributors" class="menu__link">Дистрибьюторы</a></li>
-            <li><a href="./../contacts" class="menu__link">Контакты</a></li>
+            <li><a href="./../../catalog" class="menu__link">Продукция</a></li>
+            <li><a href="./../../recipes" class="menu__link active">Рецепты</a></li>
+            <li><a href="./../../about" class="menu__link">О бренде</a></li>
+            <li><a href="./../../distributors" class="menu__link">Дистрибьюторы</a></li>
+            <li><a href="./../../contacts" class="menu__link">Контакты</a></li>
             <li>
               <ul class="socials">
                 <li>
-                  <a href="https://vk.com/omskiy.bacon" target="_blank"> <img src="./../assets/img/socials/vk.webp" alt="" /> </a>
+                  <a href="https://vk.com/omskiy.bacon" target="_blank"> <img src="./../../assets/img/socials/vk.webp" alt="" /> </a>
                 </li>
                 <li>
                   <a href="https://app.box.com/s/ecbi2021cj077xrbalwhabdpht4shzil" target="_blank">
-                    <img src="./../assets/img/socials/youtube.webp" alt="" />
+                    <img src="./../../assets/img/socials/youtube.webp" alt="" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://music.yandex.ru/artist/7525778" target="_blank"> <img src="./../assets/img/socials/vk_music.webp" alt="" /> </a>
+                  <a href="https://music.yandex.ru/artist/7525778" target="_blank"> <img src="./../../assets/img/socials/vk_music.webp" alt="" /> </a>
                 </li>
               </ul>
             </li>
@@ -63,49 +64,73 @@
     </header>
 
     <main class="main">
-      <!--РЕЦЕПТЫ-->
-      <section class="section section--page">
+      <!--ГЕРОЙ-->
+      <section class="section section--hero recipe--hero">
+        <div class="hero-image">
+          <img src="./../../assets/img/recipes/6/hero.webp" alt="" />
+        </div>
         <div class="container">
-          <h1 class="title">Попробуй сибирь на вкус</h1>
+          <a href="./../" class="button go-back">&lt;&nbsp;&nbsp;Назад</a>
+          <h1 class="title">Картофель с&nbsp;грудинкой&nbsp;и&nbsp;яйцом</h1>
+        </div>
+      </section>
 
-          <ul class="recipes grid grid--col3">
+      <!--ИНГРЕДИЕНТЫ-->
+      <section class="section section--recipeIngredients">
+        <div class="container">
+          <h2 class="title title--h2">Ингредиенты</h2>
+
+          <ul class="ingredients-list">
+            <li><span>Тесто для пиццы</span><span>1 пластина</span></li>
             <li>
-              <a href="./../recipes/pizza-s-varenoy-kolbasoy" class="article-image medium-size">
-                <img src="./../assets/img/recipes/1/thumbnail.webp" alt="" />
-                <h3 class="title">пицца с&nbsp;вареной колбасой</h3>
-              </a>
+              <span>Варёная колбаса «Молочная» <br />от «Омского бекона»</span><span>150 г</span>
             </li>
-            <li>
-              <a href="./../recipes/pasta-s-vetchinoy" class="article-image medium-size">
-                <img src="./../assets/img/recipes/2/thumbnail.webp" alt="" />
-                <h3 class="title">Паста с&nbsp;ветчиной</h3>
-              </a>
-            </li>
-            <li>
-              <a href="./../recipes/hot-dog-s-lukom-i-bekonom" class="article-image medium-size">
-                <img src="./../assets/img/recipes/3/thumbnail.webp" alt="" />
-                <h3 class="title">Хот-Дог с&nbsp;луком и&nbsp;беконом</h3>
-              </a>
-            </li>
-            <li>
-              <a href="./../recipes/salat-s-ovoshami-i-kapchonoy-kolbasoy" class="article-image medium-size">
-                <img src="./../assets/img/recipes/4/thumbnail.webp" alt="" />
-                <h3 class="title">Теплый салат с&nbsp;овощами и&nbsp;копченой колбасой</h3>
-              </a>
-            </li>
-            <li>
-              <a href="./../recipes/sosiski-s-ovoshami-v-folge" class="article-image medium-size">
-                <img src="./../assets/img/recipes/5/thumbnail.webp" alt="" />
-                <h3 class="title">Сосиски с&nbsp;овощами в&nbsp;фольге</h3>
-              </a>
-            </li>
-            <li>
-              <a href="./../recipes/kartofel-s-grudinkoy-i-yaizom" class="article-image medium-size">
-                <img src="./../assets/img/recipes/6/thumbnail.webp" alt="" />
-                <h3 class="title">Картофель с&nbsp;грудинкой и&nbsp;яйцом</h3>
-              </a>
-            </li>
+            <li><span>Твёрдый сыр</span><span>100 г</span></li>
+            <li><span>Помидоры</span><span>150 г</span></li>
+            <li><span>Плавленый сыр</span><span>1 уп.</span></li>
+            <li><span>Майонез</span><span>100 г</span></li>
+            <li><span>Столовая горчица</span><span>1 ст.л.</span></li>
+            <li><span>Зелёный базилик</span><span>1 пучок</span></li>
           </ul>
+        </div>
+      </section>
+
+      <!--СЛАЙДЕР-->
+      <section class="section section--slider" data-slider data-slides-per-view="1,1,1" data-slides-per-group="1,1,1" data-space-between="30,30,30">
+        <div class="container">
+          <h2 class="title">Готовим</h2>
+          <div class="slider-arrows">
+            <button data-arrow-prev class="swiper-arrow"></button>
+            <button data-arrow-next class="swiper-arrow"></button>
+          </div>
+          <div class="resipe-steps-slider">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./../../assets/img/recipes/6/step1.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./../../assets/img/recipes/6/step2.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./../../assets/img/recipes/6/step3.webp" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./../../assets/img/recipes/6/step4.webp" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ol class="resipe-description">
+            <li>Почистить картофель, разрезать пополам и отправить в духовку на 15 минут.</li>
+            <li>Натереть сыр на крупной терке, смешать с майонезом.</li>
+            <li>Выложить полученную смесь на запеченный картофель.</li>
+            <li>Сверху положить слегка обжаренный бекон.</li>
+            <li>На каждую половинку картофеля разбить по яйцу, посолить, поперчить.</li>
+            <li>Поставить в духовку на 30 минут и запекать при температуре 180 градусов.</li>
+            <li>При подаче украсить зеленью.</li>
+          </ol>
         </div>
       </section>
 
@@ -177,8 +202,8 @@
 
     <!--FOOTER-->
     <footer class="footer">
-      <a href="./../" class="logo" aria-label="Омский бекон">
-        <img src="./../assets/img/logo.webp" alt="" width="80" height="66" loading="eager" />
+      <a href="./../../" class="logo" aria-label="Омский бекон">
+        <img src="./../../assets/img/logo.webp" alt="" width="80" height="66" loading="eager" />
       </a>
 
       <address class="address">
@@ -187,9 +212,9 @@
       </address>
 
       <ul class="footer__menu">
-        <li><a href="./../catalog">Продукция</a></li>
-        <li><a href="./../recipes">Рецепты</a></li>
-        <li><a href="./../about">О бренде</a></li>
+        <li><a href="./../../catalog">Продукция</a></li>
+        <li><a href="./../../recipes">Рецепты</a></li>
+        <li><a href="./../../about">О бренде</a></li>
         <li>
           <span>Горячая линия:&nbsp;</span><br />
           <a href="tel:88007007420">8 800 700 74 20</a>
@@ -206,58 +231,58 @@
           <h2 class="popup-title">Где купить</h2>
           <ul class="markets-list custom-scrollbar">
             <li>
-              <a href=""><img src="./../assets/img/markets/omsk_becon.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/omsk_becon.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/samokat.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/samokat.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/kuper.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/kuper.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/yandex_lavka.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/yandex_lavka.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/metro.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/metro.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/lenta.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/lenta.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/okey.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/okey.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/perekrestok.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/perekrestok.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/magnit.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/magnit.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/pyaterochka.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/pyaterochka.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/yarche.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/yarche.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/spar.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/spar.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/bistronom.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/bistronom.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/monetka.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/monetka.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/begemag.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/begemag.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/anix.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/anix.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/maria_ra.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/maria_ra.webp" alt="" target="_blank" /></a>
             </li>
             <li>
-              <a href=""><img src="./../assets/img/markets/ashan.webp" alt="" target="_blank" /></a>
+              <a href=""><img src="./../../assets/img/markets/ashan.webp" alt="" target="_blank" /></a>
             </li>
           </ul>
         </div>
@@ -284,8 +309,8 @@
         />
       </symbol>
     </svg>
-
-    <script src="./../assets/js/forms.js" type="module"></script>
-    <script src="./../assets/js/scripts.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./../../assets/js/forms.js" type="module"></script>
+    <script src="./../../assets/js/scripts.js" type="module"></script>
   </body>
 </html>
