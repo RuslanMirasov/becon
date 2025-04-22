@@ -30,8 +30,18 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 27px;
+  padding: 10px 30px;
   gap: myclamp(20px, 48px, 1440px, 1440px);
+
+  @media (max-width: 1279px) {
+    max-width: 768px;
+    padding: 5px 30px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+    padding: 5px 20px;
+  }
 }
 
 .header__logo {
@@ -106,23 +116,35 @@
   }
 }
 
-@media (max-width: 1239px) {
+@media (max-width: 1279px) {
+  .header {
+    height: 60px;
+  }
+
+  .logo {
+    padding: 6px 10px;
+    width: 90px;
+  }
+
   .burger {
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     align-content: center;
-    width: 44px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: var(--brown);
     font-size: 0px;
     z-index: 2;
     span,
     &:before,
     &:after {
       position: absolute;
-      height: 2px;
-      background: var(--color);
+      height: 4px;
+      border-radius: 2px;
+      background: var(--white);
       transition: 0.6s;
       opacity: 1;
       z-index: 1;
@@ -131,18 +153,18 @@
     &:before,
     &:after {
       content: '';
-      width: 22px;
+      width: 20px;
     }
 
     span {
-      width: 16px;
+      width: 20px;
       transform: translate(0px, 0px);
     }
     &:before {
-      transform: translate(0px, -7px) rotate(0deg);
+      transform: translate(0px, -8px) rotate(0deg);
     }
     &:after {
-      transform: translate(0px, 7px) rotate(0deg);
+      transform: translate(0px, 8px) rotate(0deg);
     }
 
     &.open {
@@ -172,6 +194,7 @@
     -ms-overflow-style: none; /* IE и Edge */
     top: 0px;
     right: 0px;
+    background: var(--white);
     transform: translate(0%, -100%);
     transition: transform 0.6s;
     padding: 0px;
@@ -182,22 +205,26 @@
       display: none;
     }
     &.open {
-      transform: translate(0%, -0%);
+      transform: translate(0%, 0%);
     }
   }
 
   .menu {
-    padding: 100px 20px 120px 20px;
+    padding: 100px 30px 40px 30px;
+    @media (max-width: 767px) {
+      padding: 100px 20px 30px 20px;
+    }
     width: 100%;
+    max-width: 768px;
     min-height: 100vh;
-    background: var(--color);
-    color: var(--white);
-    background-size: 100% 100%;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 24px;
-
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    .socials {
+      margin-top: 20px;
+    }
     li {
       .button {
         padding: 10px 24px;

@@ -10,8 +10,8 @@
   color: var(--white);
 
   .text-content {
-    max-width: 542px;
     .title {
+      max-width: 750px;
       line-height: 0.9;
       margin-bottom: 13px;
     }
@@ -21,6 +21,7 @@
     }
 
     .subtitle {
+      max-width: 542px;
       color: var(--grey-dark);
     }
   }

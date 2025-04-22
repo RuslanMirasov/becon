@@ -11,6 +11,21 @@
   color: var(--white);
   border-radius: 50px 50px 0px 0px;
   margin: 0 auto;
+  @media (max-width: 1279px) {
+    gap: 36px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 50px 20px 160px 20px;
+
+    .logo {
+      width: 120px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 30px 20px 130px 20px;
+    border-radius: 25px 25px 0px 0px;
+  }
 }
 
 .address {
@@ -19,6 +34,9 @@
   span {
     display: block;
     color: var(--blue);
+  }
+  @media (max-width: 767px) {
+    text-align: center;
   }
 }
 
@@ -37,6 +55,14 @@
       a {
         border-bottom: 1px solid var(--white);
       }
+    }
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    li {
+      text-align: center;
     }
   }
 }

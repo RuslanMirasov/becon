@@ -48,3 +48,15 @@ export const fixHeaderOnScroll = () => {
     debouncedScrollEnd();
   });
 };
+
+export const initNavigationMenu = () => {
+  const burger = document.querySelector('.burger');
+  const menu = document.querySelector('.navigation ');
+
+  const toggleMenu = () => {
+    burger.classList.toggle('open');
+    menu.classList.toggle('open');
+  };
+
+  burger.addEventListener('click', toggleMenu);
+};
