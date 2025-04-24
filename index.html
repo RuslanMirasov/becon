@@ -113,9 +113,9 @@
       <section
         class="section section--slider"
         data-slider
-        data-slides-per-view="4,3,2"
-        data-slides-per-group="4,3,2"
-        data-space-between="33.333333,33.333333,30"
+        data-slides-per-view="4,3,1"
+        data-slides-per-group="4,3,1"
+        data-space-between="33.333333,24,24"
       >
         <div class="container">
           <h2 class="title">Вкус, проверенный временем</h2>
@@ -249,9 +249,9 @@
       <section
         class="section section--slider"
         data-slider
-        data-slides-per-view="4,3,2"
-        data-slides-per-group="4,3,2"
-        data-space-between="33.333333,33.333333,30"
+        data-slides-per-view="4,3,1"
+        data-slides-per-group="4,3,1"
+        data-space-between="33.333333,24,24"
       >
         <div class="container">
           <h2 class="title">Новинки</h2>
@@ -373,7 +373,13 @@
       </section>
 
       <!--ПОПРОБУЙ СИБИРЬ НА ВКУС-->
-      <section class="section section--slider" data-slider data-slides-per-view="3,3,2" data-slides-per-group="3,3,2" data-space-between="33,33,33">
+      <section
+        class="section section--slider"
+        data-slider
+        data-slides-per-view="3,3,1"
+        data-slides-per-group="3,3,1"
+        data-space-between="33.333333,24,24"
+      >
         <div class="container">
           <h2 class="title">Попробуй сибирь&nbsp;на&nbsp;вкус</h2>
           <div class="slider-arrows">
@@ -499,13 +505,15 @@
             <label class="label">
               <input type="email" name="email" class="input" placeholder="Почта*" required />
             </label>
-            <div class="label">
+            <div class="label label--forButton">
               <button type="submit" class="button full">Отправить сообщение</button>
             </div>
 
             <span class="form__info">
-              Отправляя свои контактные данные вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a> <br />Все поля
-              обязательны к заполнению*
+              Отправляя свои контактные данные вы соглашаетесь с&nbsp;<a href="#" target="_blank">политикой конфиденциальности</a>
+              <br />
+              <br class="show_in_tablet" />
+              Все поля обязательны к заполнению*
             </span>
           </form>
         </div>

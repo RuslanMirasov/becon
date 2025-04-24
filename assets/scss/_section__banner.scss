@@ -6,8 +6,8 @@
   display: flex;
   position: relative;
   align-items: flex-start;
-  width: calc(100% + 54px);
-  margin-left: -27px;
+  width: calc(100% + 60px);
+  margin-left: -30px;
   padding: 54px 60px;
   background: var(--color);
   color: var(--white);
@@ -76,6 +76,43 @@
       background: url('../img/mark.webp') no-repeat center center/cover;
       z-index: 2;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .banner {
+    width: 100%;
+    margin-left: 0px;
+    padding: 350px 20px 70px 20px;
+    .text-content {
+      max-width: 500px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  .banner__image {
+    width: 500px;
+    height: 420px;
+    left: 50%;
+    margin-left: -250px;
+    top: 0px;
+
+    img {
+      top: -100px;
+    }
+
+    &.position-bottom {
+      img {
+        max-height: 100%;
+      }
+
+      &:before {
+        left: 45%;
+        top: 22%;
+        transform: translate(50%, 30%);
+      }
     }
   }
 }

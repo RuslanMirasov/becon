@@ -27,3 +27,15 @@
     transform: translateX(-50%);
   }
 }
+
+@media (max-width: 1279px) {
+  .marquee__inner span {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .marquee__inner span {
+    font-size: 60px;
+  }
+}

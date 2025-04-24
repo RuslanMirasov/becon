@@ -63,3 +63,51 @@
   border-radius: 50px;
   padding: 10px 20px;
 }
+
+@media (max-width: 1279px) {
+  .section--markets {
+    padding-bottom: 50px;
+  }
+
+  .markets-banner {
+    padding: 300px 90px 50px 90px;
+    .text-content {
+      .title {
+        max-width: 470px;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        max-width: 100%;
+      }
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      z-index: 0;
+      border-radius: 50px;
+    }
+
+    &:before {
+      background: url('../img/banner-map.webp') no-repeat right top;
+      background-size: 130% auto;
+      height: 300px;
+    }
+
+    &:after {
+      background: #1a2663;
+      background: linear-gradient(0deg, rgba(26, 38, 99, 1) calc(100% - 300px), rgba(255, 255, 255, 0) 100%);
+    }
+  }
+  .markets-count {
+    right: auto;
+    left: 90px;
+    top: 50px;
+  }
+}

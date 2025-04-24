@@ -10,7 +10,7 @@ const gameData = [
     id: '1',
     title: 'Ты - ветчина варёная сочная',
     description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae reiciendis amet temporibus, quia minus architecto animi quibusdam hic blanditiis cupiditate eaque quaerat modi veritatis itaque vitae eos rem quo vel',
+      'Мягкая, душевная и такая родная, тебя подают даже на семейных праздниках под "Оливье".  Ты не стремишься выделяться — ты просто идеальна в своей простоте.  А ещё ты из Сибири: выдержанная, тёплая внутри и не боишься ни морозов, ни чужого мнения.  С тобой и чай горячее, и жизнь вкуснее.',
   },
   {
     id: '2',

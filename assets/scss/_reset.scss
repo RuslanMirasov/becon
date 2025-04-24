@@ -101,3 +101,10 @@ a {
   scrollbar-width: thin;
   scrollbar-color: var(--color) rgba(26, 38, 99, 0.1);
 }
+
+.show_in_tablet {
+  display: none;
+  @media (max-width: 1279px) {
+    display: block;
+  }
+}

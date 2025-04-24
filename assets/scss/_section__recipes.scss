@@ -1,6 +1,9 @@
 .section--recipeIngredients {
   padding-top: 32px;
   margin-bottom: -50px;
+  @media (max-width: 1279px) {
+    margin-bottom: 0px;
+  }
 }
 
 .ingredients-list {
@@ -9,6 +12,13 @@
   list-style: none;
   margin-top: 14px;
   padding: 0;
+  @media (max-width: 1279px) {
+    columns: 1 768px;
+    column-gap: 0px;
+    br {
+      display: none;
+    }
+  }
 
   li {
     break-inside: avoid;
@@ -28,7 +38,6 @@
       letter-spacing: -0.32px;
       color: #828282;
       padding: 0 10px;
-
       &:first-child {
         padding-left: 0;
         max-width: calc(100% - 110px);
@@ -64,11 +73,18 @@
     right: calc(100% - 750px);
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 400px);
     transform: translate(100%, 0%);
+    @media (max-width: 1279px) {
+      right: calc(100% - 500px);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 250px);
+    }
   }
 
   &:after {
     background: var(--white);
     right: 100%;
+    @media (max-width: 1279px) {
+      content: none;
+    }
   }
 
   .swiper-wrapper {
@@ -80,10 +96,16 @@
     height: 470px;
     margin-left: 0px;
     overflow: visible;
-
+    @media (max-width: 1279px) {
+      width: 500px;
+      height: 314px;
+    }
     .swiper-slide {
       border-radius: 50px;
       overflow: hidden;
+      @media (max-width: 1279px) {
+        border-radius: 25px;
+      }
     }
     img {
       width: 100%;
@@ -101,9 +123,16 @@
   padding-left: 24px;
   margin-top: 28px;
   margin-bottom: -50px;
+  @media (max-width: 1279px) {
+    margin-top: 20px;
+    margin-bottom: -20px;
+  }
   li {
     font-size: 24px;
     letter-spacing: -0.48px;
     line-height: 1.1;
+    @media (max-width: 1279px) {
+      font-size: 20px;
+    }
   }
 }

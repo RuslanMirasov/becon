@@ -25,6 +25,16 @@
   letter-spacing: -1.24px;
   text-transform: uppercase;
   text-align: left;
+  @media (max-width: 1279px) {
+    font-size: 46px;
+    line-height: 0.9;
+    letter-spacing: -0.92px;
+  }
+  @media (max-width: 767px) {
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.64px;
+  }
 
   &.title--h2 {
     font-size: 42px;
@@ -37,6 +47,10 @@
     line-height: 1;
     letter-spacing: -0.48px;
     text-align: center;
+    @media (max-width: 1279px) {
+      font-size: 22px;
+      letter-spacing: -0.2px;
+    }
   }
 }
 

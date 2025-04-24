@@ -59,10 +59,20 @@ export const initSliders = () => {
       slidesPerView: 'auto',
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
-      spaceBetween: 30,
       freeMode: true,
       loop: false,
       allowTouchMove: true,
+      breakpoints: {
+        0: {
+          spaceBetween: 4,
+        },
+        768: {
+          spaceBetween: 14,
+        },
+        1280: {
+          spaceBetween: 24,
+        },
+      },
     });
 
     const heroSwiper = new Swiper(heroSlider, {

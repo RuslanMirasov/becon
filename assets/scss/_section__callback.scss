@@ -10,6 +10,7 @@
     align-content: flex-start;
     gap: 24px 30px;
     margin-top: 30px;
+
     .label {
       width: calc((100% - 60px) / 3);
       &.label--textarea {
@@ -26,6 +27,35 @@
       color: var(--grey-darker);
       a {
         text-decoration: underline;
+      }
+    }
+
+    @media (max-width: 1279px) {
+      gap: 20px 20px;
+      .label {
+        width: calc((100% - 20px) / 2);
+        &.label--textarea {
+          width: calc((100% - 20px) / 2);
+        }
+        &.label--forFile {
+          order: 3;
+        }
+        &.label--forButton {
+          order: 2;
+          .button {
+            padding-left: 0px;
+            padding-right: 0px;
+          }
+        }
+      }
+      .form__info {
+        max-width: 480px;
+        order: 4;
+        margin-top: 20px;
+        br {
+          display: block;
+          margin: 20px;
+        }
       }
     }
   }

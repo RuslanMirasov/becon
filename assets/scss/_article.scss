@@ -5,15 +5,25 @@
   z-index: 1;
   width: 100%;
   height: 260px;
+
   flex-wrap: wrap;
   justify-content: flex-start;
   border-radius: 25px;
   color: var(--white);
   padding: 18px 24px;
+  @media (max-width: 1279px) {
+    height: 220px;
+    padding: 15px 20px;
+  }
   &.medium-size {
     height: 360px;
     border-radius: 50px;
     padding: 20px 30px;
+    @media (max-width: 1279px) {
+      height: 220px;
+      padding: 15px 20px;
+      border-radius: 25px;
+    }
   }
   &.big-size {
     height: 470px;
@@ -37,6 +47,9 @@
     letter-spacing: -0.48px;
     margin-top: auto;
     z-index: 3;
+    @media (max-width: 1279px) {
+      font-size: 18px;
+    }
   }
 
   &:hover {
@@ -160,6 +173,9 @@
   width: 100%;
   flex-wrap: wrap;
   gap: 10px;
+  @media (max-width: 1279px) {
+    justify-content: center;
+  }
   li {
     display: block;
     font-family: var(--900);

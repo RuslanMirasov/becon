@@ -1,5 +1,8 @@
 .section--hero {
   height: 630px;
+  @media (max-width: 1279px) {
+    height: 430px;
+  }
   color: var(--white);
   overflow: hidden;
   border-radius: 0px 0px 50px 50px;
@@ -79,6 +82,9 @@
     align-items: flex-start;
     height: 100%;
     padding-top: 136px;
+    @media (max-width: 1279px) {
+      padding-top: 86px;
+    }
     padding-bottom: 30px;
     z-index: 4;
     h1 {
@@ -125,6 +131,10 @@
   .swiper-slide {
     width: 105px;
     height: 58px;
+    @media (max-width: 1279px) {
+      width: 65px;
+      height: 36px;
+    }
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -162,6 +172,7 @@
   left: 0px;
   top: 0px;
   width: 100%;
+  height: 100%;
   z-index: -1;
   img {
     width: 100%;
