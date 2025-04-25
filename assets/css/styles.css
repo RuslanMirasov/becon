@@ -1805,6 +1805,15 @@ body.locked {
     height: 430px;
   }
 }
+@media (max-width: 767px) {
+  .section--hero {
+    border-radius: 0px 0px 25px 25px;
+    height: 256px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    overflow: visible;
+  }
+}
 .section--hero.recipe--hero .hero-image {
   width: 100%;
   height: 100%;
@@ -1855,6 +1864,7 @@ body.locked {
 }
 .section--hero:before {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(87, 199, 133, 0) 25%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 0px 0px 25px 25px;
   z-index: 3;
 }
 .section--hero:after {
@@ -1878,9 +1888,26 @@ body.locked {
     padding-top: 86px;
   }
 }
+@media (max-width: 767px) {
+  .section--hero .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
 .section--hero .container h1 span {
   vertical-align: super;
   font-size: 34px;
+}
+@media (max-width: 767px) {
+  .section--hero .container h1 {
+    font-size: 20px;
+    line-height: 1;
+    margin: 0;
+  }
+  .section--hero .container h1 span {
+    vertical-align: top;
+    font-size: 18px;
+  }
 }
 
 .swiper--hero {
@@ -1895,6 +1922,12 @@ body.locked {
   width: 100%;
   height: 100%;
 }
+@media (max-width: 767px) {
+  .swiper--hero .swiper-slide {
+    overflow: hidden;
+    border-radius: 0px 0px 25px 25px;
+  }
+}
 
 .hero-info {
   display: block;
@@ -1903,15 +1936,29 @@ body.locked {
   font-family: var(--500);
   line-height: 1.3;
 }
+@media (max-width: 767px) {
+  .hero-info {
+    font-size: 8px;
+    margin-top: 0px;
+  }
+}
 
 .thumb {
   display: block;
+  position: relative;
   width: 100%;
 }
 
 .swiper--thumb {
   width: 100%;
   overflow: visible;
+}
+@media (max-width: 767px) {
+  .swiper--thumb {
+    position: absolute;
+    top: 100%;
+    margin-top: 30px;
+  }
 }
 .swiper--thumb .swiper-slide {
   width: 105px;
@@ -1984,6 +2031,18 @@ body.locked {
   }
   .section--slider .container > h2.title {
     width: calc(100% - 120px);
+  }
+}
+@media (max-width: 767px) {
+  .section--slider .container {
+    padding: 40px 20px;
+    gap: 20px;
+  }
+  .section--slider .container > h2.title {
+    width: 100%;
+  }
+  .section--slider .container .swiper-wrapper {
+    overflow: visible;
   }
 }
 
@@ -2254,6 +2313,44 @@ body.locked {
     transform: translate(50%, 30%);
   }
 }
+@media (max-width: 767px) {
+  .banner {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 240px 20px 45px 20px;
+  }
+  .banner .text-content {
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .banner .text-content .button {
+    width: 100%;
+  }
+  .banner .text-content .subtitle {
+    font-size: 14px;
+  }
+  .banner__image {
+    width: 100%;
+    height: 260px;
+    left: 0%;
+    margin-left: 0px;
+    top: 0px;
+  }
+  .banner__image img {
+    top: -40px;
+  }
+  .banner__image.position-bottom img {
+    max-height: 100%;
+  }
+  .banner__image.position-bottom:before {
+    width: 80px;
+    height: 80px;
+    left: 45%;
+    top: 30%;
+    transform: translate(50%, 30%);
+  }
+}
 .section--game {
   padding: 84px 0px;
   margin-top: -42px;
@@ -2494,13 +2591,13 @@ body.locked {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.section--parallax img:last-child {
+.section--parallax img:first-child {
   position: relative;
   height: auto;
 }
 .section--parallax img[data-parallax] {
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   will-change: transform;
   transition: transform 2s cubic-bezier(0, 0.58, 0, 1);
 }

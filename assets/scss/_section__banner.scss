@@ -116,3 +116,50 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .banner {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 240px 20px 45px 20px;
+    .text-content {
+      max-width: 500px;
+      margin-right: auto;
+      margin-left: auto;
+
+      .button {
+        width: 100%;
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .banner__image {
+    width: 100%;
+    height: 260px;
+    left: 0%;
+    margin-left: 0px;
+    top: 0px;
+
+    img {
+      top: -40px;
+    }
+
+    &.position-bottom {
+      img {
+        max-height: 100%;
+      }
+
+      &:before {
+        width: 80px;
+        height: 80px;
+        left: 45%;
+        top: 30%;
+        transform: translate(50%, 30%);
+      }
+    }
+  }
+}

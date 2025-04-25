@@ -44,12 +44,12 @@
     transform: translate(-50%, 0%);
     top: 0px;
     object-fit: cover;
-    &:last-child {
+    &:first-child {
       position: relative;
       height: auto;
     }
     &[data-parallax] {
-      object-fit: contain;
+      object-fit: cover;
       will-change: transform;
       transition: transform 2s cubic-bezier(0, 0.58, 0, 1);
     }

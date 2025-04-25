@@ -14,5 +14,16 @@
         width: calc(100% - 120px);
       }
     }
+    @media (max-width: 767px) {
+      padding: 40px 20px;
+      gap: 20px;
+      > h2.title {
+        width: 100%;
+      }
+
+      .swiper-wrapper {
+        overflow: visible;
+      }
+    }
   }
 }
