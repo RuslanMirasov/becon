@@ -2452,13 +2452,11 @@ body.locked {
   display: flex;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: auto;
   height: auto;
-  min-height: 100vh;
   justify-content: center;
   align-items: center;
   align-content: center;
-  min-height: 100vh;
   margin-top: -12%;
   margin-bottom: -20%;
   pointer-events: none;
@@ -2467,17 +2465,28 @@ body.locked {
 .section--parallax.no-margin {
   margin-top: 0%;
   margin-bottom: 0px;
+  max-height: 100vh;
 }
 .section--parallax.no-margin img {
-  top: -6%;
+  top: 0%;
 }
 .section--parallax.no-margin img:last-child {
-  margin-top: -6%;
+  margin-top: 0%;
+}
+.section--parallax.no-margin:before {
+  content: "";
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(0deg, #fff, rgba(255, 255, 255, 0));
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  pointer-events: none;
+  z-index: 4;
 }
 .section--parallax img {
   position: absolute;
-  width: 100%;
-  min-width: 1440px;
+  width: 104%;
   height: 100%;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -2488,10 +2497,6 @@ body.locked {
 .section--parallax img:last-child {
   position: relative;
   height: auto;
-}
-.section--parallax img.parallax-text {
-  max-width: 100%;
-  min-width: 100%;
 }
 .section--parallax img[data-parallax] {
   -o-object-fit: contain;

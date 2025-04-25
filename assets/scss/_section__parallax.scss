@@ -2,13 +2,12 @@
   display: flex;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: auto;
   height: auto;
-  min-height: 100vh;
+
   justify-content: center;
   align-items: center;
   align-content: center;
-  min-height: 100vh;
   margin-top: -12%;
   margin-bottom: -20%;
   pointer-events: none;
@@ -17,18 +16,29 @@
   &.no-margin {
     margin-top: 0%;
     margin-bottom: 0px;
+    max-height: 100vh;
     img {
-      top: -6%;
+      top: 0%;
       &:last-child {
-        margin-top: -6%;
+        margin-top: 0%;
       }
+    }
+    &:before {
+      content: '';
+      width: 100%;
+      height: 20%;
+      background: linear-gradient(0deg, #fff, rgba(255, 255, 255, 0));
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      pointer-events: none;
+      z-index: 4;
     }
   }
 
   img {
     position: absolute;
-    width: 100%;
-    min-width: 1440px;
+    width: 104%;
     height: 100%;
     left: 50%;
     transform: translate(-50%, 0%);
@@ -37,10 +47,6 @@
     &:last-child {
       position: relative;
       height: auto;
-    }
-    &.parallax-text {
-      max-width: 100%;
-      min-width: 100%;
     }
     &[data-parallax] {
       object-fit: contain;
