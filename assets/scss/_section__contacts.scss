@@ -1,6 +1,7 @@
 .map {
   width: 100%;
   height: 450px;
+  max-height: 90vh;
   background: #eee;
 
   [class*='ground-pane'] {
@@ -29,6 +30,17 @@
     padding: 30px 30px 0px 30px;
     margin-bottom: 50px;
   }
+  @media (max-width: 767px) {
+    gap: 20px;
+    max-width: 768px;
+    padding: 32px 20px 0px 20px;
+    margin-bottom: 50px;
+    > .title {
+      text-align: center;
+      font-size: 28px;
+      max-width: 200px;
+    }
+  }
 
   &:before {
     content: '';
@@ -46,6 +58,10 @@
     display: block;
     columns: 2;
     column-gap: 16px;
+    @media (max-width: 767px) {
+      columns: 1;
+      column-gap: 16px;
+    }
     position: relative;
     z-index: 1;
     width: 100%;
@@ -96,6 +112,15 @@
     &:before,
     &:after {
       background: var(--brown);
+    }
+  }
+  @media (max-width: 767px) {
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+    a {
+      font-size: 28px;
+      text-align: center;
     }
   }
 }

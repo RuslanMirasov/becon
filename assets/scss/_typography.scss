@@ -40,6 +40,11 @@
     font-size: 42px;
     line-height: 1.2;
     letter-spacing: -0.84px;
+    @media (max-width: 767px) {
+      font-size: 32px;
+      line-height: 1;
+      letter-spacing: -0.64px;
+    }
   }
 
   &.title--h3 {
@@ -61,7 +66,7 @@
   font-family: var(--600);
   line-height: 1.36;
   letter-spacing: -0.36px;
-  // @media (max-width: 767px) {
-  //   font-size: 14px;
-  // }
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 }

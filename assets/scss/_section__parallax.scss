@@ -4,7 +4,7 @@
   overflow: hidden;
   width: auto;
   height: auto;
-
+  min-height: 304px;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -12,6 +12,11 @@
   margin-bottom: -20%;
   pointer-events: none;
   z-index: -1;
+
+  .parallax {
+    height: 100%;
+    min-height: 304px;
+  }
 
   &.no-margin {
     margin-top: 0%;
@@ -46,7 +51,8 @@
     object-fit: cover;
     &:first-child {
       position: relative;
-      height: auto;
+      height: 100%;
+      min-height: 304px;
     }
     &[data-parallax] {
       object-fit: cover;

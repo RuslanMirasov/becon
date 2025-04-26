@@ -7,6 +7,11 @@
   --input-color: var(--color);
   --input-placeholder-color: rgba(0, 0, 0, 0.2);
   --invalid: #b7142b;
+
+  @media (max-width: 767px) {
+    --input-font-size: 18px;
+    --input-height: 52px;
+  }
 }
 
 .label {
@@ -105,6 +110,10 @@ span.input-icon {
 .textarea {
   display: block;
   padding: 22px 30px;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 }
 
 .radio,
@@ -220,6 +229,10 @@ input[type='file'] {
   cursor: pointer;
   color: var(--input-placeholder-color);
   transition: 0.3s;
+  @media (max-width: 767px) {
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
 
   .file-placeholder {
     display: -webkit-box;

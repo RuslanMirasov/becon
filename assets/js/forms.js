@@ -164,17 +164,30 @@ document.addEventListener('focusin', e => {
   }
 
   if (e.target.nodeName === 'SELECT') {
-    e.target.classList.add('open');
+    // e.target.classList.add('open');
     e.target.classList.remove('placeholder');
+  }
+});
+
+document.addEventListener('click', e => {
+  if (e.target.nodeName === 'SELECT') {
+    e.target.classList.toggle('open');
+  }
+});
+
+document.addEventListener('blur', e => {
+  if (e.target.nodeName === 'SELECT') {
+    e.target.classList.remove('open');
   }
 });
 
 document.addEventListener('change', e => {
   if (e.target.nodeName === 'SELECT') {
-    const selectInput = e.target;
-    selectInput.classList.remove('open');
-    selectInput.blur();
+    setTimeout(() => {
+      e.target.classList.remove('open');
+    }, 0);
   }
+
   if (e.target.type === 'checkbox') {
     validateInput(e.target);
   }
@@ -283,7 +296,25 @@ Object.entries(telHandlers).forEach(([eventName, handler]) => {
 function validateFile(input) {
   const label = input.closest('label');
   const placeholderEl = label.querySelector('.file-placeholder');
-  const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf'];
+  const allowedTypes = [
+    'image/jpeg',
+    'image/png',
+    'image/gif',
+    'image/webp',
+    'image/bmp',
+    'image/tiff',
+    'application/pdf',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/vnd.ms-excel',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'application/vnd.ms-powerpoint',
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    'application/rtf',
+    'text/plain',
+    'application/vnd.oasis.opendocument.text',
+    'application/vnd.oasis.opendocument.spreadsheet',
+  ];
   const maxFileSize = 3 * 1024 * 1024; // 3 МБ
   const { files } = input;
   const file = files[0];

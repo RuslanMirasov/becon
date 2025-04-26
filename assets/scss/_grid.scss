@@ -35,3 +35,21 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .grid {
+    &.grid--col3 {
+      gap: 24px 12px;
+      > li {
+        width: calc((100% - 12px) / 2);
+      }
+    }
+
+    &.grid--col4 {
+      gap: 24px 12px;
+      > li {
+        width: calc((100% - 12px) / 2);
+      }
+    }
+  }
+}

@@ -4,6 +4,18 @@
 
   .recipes {
     margin-top: 30px;
+
+    @media (max-width: 767px) {
+      gap: 12px;
+      .article-image {
+        height: myclamp(134px, 134px, 320px, 414px);
+        border-radius: 15px;
+        padding: 10px 12px;
+        .title {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }
 
@@ -128,6 +140,69 @@
         &:nth-child(1),
         &:nth-child(3) {
           min-width: 35%;
+          max-width: 100%;
+        }
+        &:nth-child(2),
+        &:nth-child(4) {
+          min-width: calc(65% - 40px);
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .catalog {
+    gap: 12px;
+    li {
+      min-width: auto;
+      flex: none;
+      width: calc(50% - 6px);
+
+      &:nth-child(2) {
+        min-width: auto;
+      }
+
+      &:nth-child(4) {
+        min-width: auto;
+      }
+
+      &:nth-child(13) {
+        min-width: auto;
+      }
+    }
+
+    .article-image {
+      height: myclamp(134px, 134px, 320px, 414px);
+      padding: 10px 12px;
+      border-radius: 15px;
+      .title {
+        font-size: 14px;
+        hyphens: auto;
+        word-break: normal;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+
+  .label--region {
+    max-width: 100%;
+  }
+
+  .distributors__list {
+    margin-top: 0px;
+    li {
+      padding: 20px;
+      min-height: auto;
+      flex-wrap: wrap;
+      gap: 10px 40px;
+      p {
+        width: auto;
+        flex: 1;
+        &:nth-child(1),
+        &:nth-child(3) {
+          min-width: 100%;
           max-width: 100%;
         }
         &:nth-child(2),

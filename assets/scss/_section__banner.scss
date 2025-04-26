@@ -118,6 +118,9 @@
 }
 
 @media (max-width: 767px) {
+  .section--banner {
+    padding-bottom: 20px;
+  }
   .banner {
     width: calc(100% + 40px);
     margin-left: -20px;
@@ -126,6 +129,7 @@
       max-width: 500px;
       margin-right: auto;
       margin-left: auto;
+      padding: 0px 10px;
 
       .button {
         width: 100%;

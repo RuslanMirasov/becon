@@ -1,9 +1,11 @@
 ymaps.ready(init);
 
 function init() {
+  const zoom = window.innerWidth <= 767 ? 11 : 12;
+
   const map = new ymaps.Map('map', {
     center: [54.989347, 73.368221],
-    zoom: 12,
+    zoom,
     controls: ['zoomControl'],
   });
 
@@ -35,6 +37,10 @@ function init() {
 
       el.addEventListener('click', () => {
         map.setCenter(coords, 16, { duration: 0 });
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth', // плавный скролл
+        });
       });
     }
   });

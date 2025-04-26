@@ -11,7 +11,7 @@ const updateParallax = () => {
     const elTop = rect.top;
     const elBottom = rect.bottom;
 
-    if (elTop >= 0 && elBottom <= viewportHeight) {
+    if (elTop >= 0 && elBottom < viewportHeight) {
       el.style.transform = `translate(-50%, 0px)`;
       return;
     }

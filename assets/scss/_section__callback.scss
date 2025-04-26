@@ -58,5 +58,37 @@
         }
       }
     }
+
+    @media (max-width: 767px) {
+      .label {
+        width: 100%;
+        order: 1;
+        &.label--textarea {
+          width: 100%;
+          .textarea {
+            height: 130px;
+          }
+        }
+        &.label--forFile {
+          order: 1;
+        }
+        &.label--forButton {
+          order: 1;
+          .button {
+            padding-left: 0px;
+            padding-right: 0px;
+          }
+        }
+      }
+      .form__info {
+        max-width: 480px;
+        order: 1;
+        margin-top: 0px;
+        font-size: 14px;
+        br {
+          display: block;
+        }
+      }
+    }
   }
 }

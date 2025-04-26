@@ -32,6 +32,17 @@
         max-width: 75%;
       }
     }
+    @media (max-width: 767px) {
+      margin-bottom: 0px;
+      overflow: hidden;
+      .container {
+        padding-bottom: 18px;
+        h1 {
+          max-width: 100%;
+          font-size: 24px;
+        }
+      }
+    }
   }
   &.auto {
     height: auto;
@@ -40,6 +51,18 @@
       h1 {
         margin: 0;
         margin-top: 30px;
+      }
+    }
+    @media (max-width: 767px) {
+      overflow: hidden;
+      border-radius: 0px 0px 25px 25px;
+      height: 300px;
+      margin-bottom: 0px;
+      .container {
+        height: 100%;
+      }
+      h1.title {
+        font-size: 32px;
       }
     }
   }

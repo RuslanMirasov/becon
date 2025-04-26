@@ -21,8 +21,18 @@
         width: 100%;
       }
 
+      .swiper {
+        overflow: visible;
+        width: 220px;
+        margin-right: auto;
+        margin-left: 0;
+      }
       .swiper-wrapper {
         overflow: visible;
+
+        .swiper-slide {
+          width: 220px;
+        }
       }
     }
   }
