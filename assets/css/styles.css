@@ -131,6 +131,8 @@
   -moz-osx-font-smoothing: grayscale;
   outline: none;
   -webkit-tap-highlight-color: transparent;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 *,
@@ -139,6 +141,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -146,15 +149,24 @@ html {
 }
 
 body {
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+  -webkit-overflow-scrolling: auto;
   position: relative;
   width: 100%;
   height: 100%;
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--color);
   font-family: var(--900);
   line-height: 1.4;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+html,
+body {
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
 }
 
 img {
@@ -1539,6 +1551,11 @@ body.locked {
 }
 
 .backdrop {
+  transform: translateZ(0);
+  will-change: opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
   display: grid;
   place-items: center;
   position: fixed;
@@ -1549,10 +1566,11 @@ body.locked {
   z-index: 1000;
   overflow-x: hidden;
   overflow-y: scroll;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
   -webkit-overflow-scrolling: touch;
   padding: 50px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.4s ease 0s, visibility 0.4s ease 0s;
+  transition: opacity 0.2s ease-in-out 0s, visibility 0.2s ease-in-out 0s;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -1567,10 +1585,23 @@ body.locked {
   opacity: 1;
   pointer-events: all;
 }
+.backdrop:before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  left: -20px;
+  right: -20px;
+  top: -50px;
+  width: calc(100% + 40px);
+  height: calc(100% + 100px);
+  background: #000;
+  opacity: 0.5;
+  grid-area: 1/1/2/2;
+}
 
 .popup {
   position: relative;
-  transition: 0.4s;
+  transition: 0.3s;
   transform: translate(0px, 20px);
   opacity: 0;
   z-index: 1;
@@ -1619,8 +1650,6 @@ body.locked {
 .file-reset {
     right: 14px;
     top: 14px;
-    width: 32px;
-    height: 32px;
   }
 }
 .popup-close:before, .popup-close:after,

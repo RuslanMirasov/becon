@@ -1,4 +1,4 @@
-$popup_transition: 0.4s;
+$popup_transition: 0.3s;
 
 body.locked {
   overflow-x: hidden;
@@ -6,6 +6,11 @@ body.locked {
 }
 
 .backdrop {
+  transform: translateZ(0);
+  will-change: opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
   display: grid;
   place-items: center;
   position: fixed;
@@ -16,13 +21,14 @@ body.locked {
   z-index: 1000;
   overflow-x: hidden;
   overflow-y: scroll;
+  overscroll-behavior: none;
   -webkit-overflow-scrolling: touch;
   padding: 50px 20px;
   @media (max-width: 767px) {
     padding: 20px;
   }
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity $popup_transition ease 0s, visibility $popup_transition ease 0s;
+
+  transition: opacity 0.2s ease-in-out 0s, visibility 0.2s ease-in-out 0s;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -30,6 +36,19 @@ body.locked {
     visibility: visible;
     opacity: 1;
     pointer-events: all;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    left: -20px;
+    right: -20px;
+    top: -50px;
+    width: calc(100% + 40px);
+    height: calc(100% + 100px);
+    background: #000;
+    opacity: 0.5;
+    grid-area: 1 / 1 / 2 / 2;
   }
 }
 
@@ -72,8 +91,6 @@ body.locked {
   @media (max-width: 767px) {
     right: 14px;
     top: 14px;
-    width: 32px;
-    height: 32px;
   }
   background: #e8e8e8;
   border-radius: 38px;

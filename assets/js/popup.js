@@ -53,7 +53,6 @@ export const popup = {
     this._backdrop.classList.remove('active');
 
     await this._waitForTransition(this._backdrop);
-
     this._hideAllContent();
     this._unlockScroll();
 
@@ -173,13 +172,6 @@ export const popup = {
   _unlockScroll() {
     const header = document.querySelector('.header');
 
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.left = '';
-    document.body.style.right = '';
-    document.body.style.width = '';
-    document.body.style.overflow = '';
-
     if (header) {
       header.style.width = '100%';
     }
@@ -189,6 +181,15 @@ export const popup = {
       if (el) el.style.top = '';
     });
 
-    window.scrollTo(0, this._scrollY);
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, this._scrollY);
+    });
   },
 };
