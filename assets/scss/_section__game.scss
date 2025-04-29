@@ -99,6 +99,8 @@
     width: 100%;
     object-fit: contain;
     opacity: 0;
+    transition: transform 1s;
+    transform: translate(0px, 0px);
     &.active {
       opacity: 1;
     }
@@ -151,7 +153,7 @@
       border-radius: 50px;
     }
     &:before {
-      background: url('../img/game-bg-mobil.webp') no-repeat center center/cover;
+      background: url('../img/game-bg-tablet.webp') no-repeat center center/cover;
     }
 
     .container {
@@ -160,10 +162,17 @@
       align-content: flex-start;
     }
 
-    .text-content--intro {
-      width: 708px;
+    .text-content.text-content--intro {
+      width: 370px;
       top: 50%;
-      transform: translate(0%, -50%);
+      left: 50%;
+      .title {
+        text-align: left;
+      }
+      .button {
+        width: 100%;
+      }
+      transform: translate(-50%, -50%);
     }
   }
 
@@ -187,6 +196,32 @@
   .finish {
     .game-images {
       transform: translate(-50%, 77%) scale(0.8);
+      img {
+        &.gameItem-1 {
+          transform: translate(0px, 30px);
+        }
+        &.gameItem-3 {
+          transform: translate(0px, 85px);
+        }
+        &.gameItem-4 {
+          transform: translate(0px, 40px);
+        }
+        &.gameItem-5 {
+          transform: translate(0px, 60px);
+        }
+        &.gameItem-6 {
+          transform: translate(0px, 30px);
+        }
+        &.gameItem-7 {
+          transform: translate(0px, -20px);
+        }
+        &.gameItem-8 {
+          transform: translate(0px, 70px);
+        }
+        &.gameItem-9 {
+          transform: translate(0px, 50px);
+        }
+      }
     }
   }
 }
@@ -197,20 +232,23 @@
     box-sizing: border-box;
     height: 568px;
     padding: 40px 0px;
+    margin-bottom: 120px;
     &:before,
     &:after {
       max-width: 414px;
+      border-radius: 25px;
+    }
+    &:before {
+      background: url('../img/game-bg-mobil.webp') no-repeat center center/cover;
     }
     .text-content {
       .button {
         min-width: 20px;
         width: 100%;
       }
-    }
-    .text-content--intro {
-      width: calc(100% - 40px);
-      top: 50%;
-      transform: translate(0%, -50%);
+      &.text-content--intro {
+        width: 276px;
+      }
     }
   }
 
@@ -220,8 +258,11 @@
     transform: translate(-50%, 50%) scale(1.3);
   }
 
-  .text-content--result {
-    max-width: 300px;
+  .text-content.text-content--result {
+    max-width: 276px;
+    .title {
+      margin-bottom: 0px;
+    }
     .button {
       margin-top: 20px;
     }
@@ -235,6 +276,35 @@
   .finish {
     .game-images {
       transform: translate(-50%, 100%) scale(1);
+      img {
+        &.gameItem-1 {
+          transform: translate(0px, 0px) scale(1.05);
+        }
+        &.gameItem-2 {
+          transform: translate(0px, 0px);
+        }
+        &.gameItem-3 {
+          transform: translate(0px, 60px);
+        }
+        &.gameItem-4 {
+          transform: translate(0px, 20px);
+        }
+        &.gameItem-5 {
+          transform: translate(0px, 0px);
+        }
+        &.gameItem-6 {
+          transform: translate(0px, -10px);
+        }
+        &.gameItem-7 {
+          transform: translate(0px, -40px);
+        }
+        &.gameItem-8 {
+          transform: translate(0px, 10px);
+        }
+        &.gameItem-9 {
+          transform: translate(0px, 5px);
+        }
+      }
     }
   }
 }

@@ -95,12 +95,12 @@ const setElementsPositions = () => {
   setTimeout(() => {
     clearInterval(repeaterInterval);
     setResultMarkup();
-  }, 4000);
+  }, 4000); //4000
 
   setTimeout(() => {
     poligon.classList.remove('start');
     poligon.classList.add('finish');
-  }, 4500);
+  }, 4500); //4500
 };
 
 const startGame = () => {

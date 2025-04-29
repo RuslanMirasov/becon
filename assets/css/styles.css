@@ -2731,6 +2731,8 @@ body.locked {
   -o-object-fit: contain;
      object-fit: contain;
   opacity: 0;
+  transition: transform 1s;
+  transform: translate(0px, 0px);
 }
 .game-images img.active {
   opacity: 1;
@@ -2778,17 +2780,24 @@ body.locked {
     border-radius: 50px;
   }
   .game-banner:before {
-    background: url("../img/game-bg-mobil.webp") no-repeat center center/cover;
+    background: url("../img/game-bg-tablet.webp") no-repeat center center/cover;
   }
   .game-banner .container {
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
   }
-  .game-banner .text-content--intro {
-    width: 708px;
+  .game-banner .text-content.text-content--intro {
+    width: 370px;
     top: 50%;
-    transform: translate(0%, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .game-banner .text-content.text-content--intro .title {
+    text-align: left;
+  }
+  .game-banner .text-content.text-content--intro .button {
+    width: 100%;
   }
   .game-images {
     width: 650px;
@@ -2808,6 +2817,30 @@ body.locked {
   .finish .game-images {
     transform: translate(-50%, 77%) scale(0.8);
   }
+  .finish .game-images img.gameItem-1 {
+    transform: translate(0px, 30px);
+  }
+  .finish .game-images img.gameItem-3 {
+    transform: translate(0px, 85px);
+  }
+  .finish .game-images img.gameItem-4 {
+    transform: translate(0px, 40px);
+  }
+  .finish .game-images img.gameItem-5 {
+    transform: translate(0px, 60px);
+  }
+  .finish .game-images img.gameItem-6 {
+    transform: translate(0px, 30px);
+  }
+  .finish .game-images img.gameItem-7 {
+    transform: translate(0px, -20px);
+  }
+  .finish .game-images img.gameItem-8 {
+    transform: translate(0px, 70px);
+  }
+  .finish .game-images img.gameItem-9 {
+    transform: translate(0px, 50px);
+  }
 }
 @media (max-width: 767px) {
   .game-banner {
@@ -2815,35 +2848,68 @@ body.locked {
     box-sizing: border-box;
     height: 568px;
     padding: 40px 0px;
+    margin-bottom: 120px;
   }
   .game-banner:before, .game-banner:after {
     max-width: 414px;
+    border-radius: 25px;
+  }
+  .game-banner:before {
+    background: url("../img/game-bg-mobil.webp") no-repeat center center/cover;
   }
   .game-banner .text-content .button {
     min-width: 20px;
     width: 100%;
   }
-  .game-banner .text-content--intro {
-    width: calc(100% - 40px);
-    top: 50%;
-    transform: translate(0%, -50%);
+  .game-banner .text-content.text-content--intro {
+    width: 276px;
   }
   .game-images {
     width: 350px;
     height: 350px;
     transform: translate(-50%, 50%) scale(1.3);
   }
-  .text-content--result {
-    max-width: 300px;
+  .text-content.text-content--result {
+    max-width: 276px;
   }
-  .text-content--result .button {
+  .text-content.text-content--result .title {
+    margin-bottom: 0px;
+  }
+  .text-content.text-content--result .button {
     margin-top: 20px;
   }
-  .text-content--result p br {
+  .text-content.text-content--result p br {
     display: none;
   }
   .finish .game-images {
     transform: translate(-50%, 100%) scale(1);
+  }
+  .finish .game-images img.gameItem-1 {
+    transform: translate(0px, 0px) scale(1.05);
+  }
+  .finish .game-images img.gameItem-2 {
+    transform: translate(0px, 0px);
+  }
+  .finish .game-images img.gameItem-3 {
+    transform: translate(0px, 60px);
+  }
+  .finish .game-images img.gameItem-4 {
+    transform: translate(0px, 20px);
+  }
+  .finish .game-images img.gameItem-5 {
+    transform: translate(0px, 0px);
+  }
+  .finish .game-images img.gameItem-6 {
+    transform: translate(0px, -10px);
+  }
+  .finish .game-images img.gameItem-7 {
+    transform: translate(0px, -40px);
+  }
+  .finish .game-images img.gameItem-8 {
+    transform: translate(0px, 10px);
+  }
+  .finish .game-images img.gameItem-9 {
+    transform: translate(0px, 5px);
   }
 }
 .section--parallax {
