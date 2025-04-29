@@ -57,6 +57,7 @@
     &[data-parallax] {
       object-fit: cover;
       will-change: transform;
+      transform: translate(-50%, 100px);
       transition: transform 2s cubic-bezier(0, 0.58, 0, 1);
     }
   }

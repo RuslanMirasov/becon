@@ -14,7 +14,8 @@
     .label {
       width: calc((100% - 60px) / 3);
       &.label--textarea {
-        width: calc(66.666666% - 15px);
+        width: calc(66.666666% - 10px);
+        width: calc(((100% - 15px) / 3) * 2);
       }
     }
     .form__info {

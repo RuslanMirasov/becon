@@ -3,27 +3,33 @@ const parallaxElements = document.querySelectorAll('[data-parallax]');
 const updateParallax = () => {
   const scrollTop = window.scrollY;
   const viewportHeight = window.innerHeight;
+  const viewportWidth = window.innerWidth;
+
+  const isMobile = viewportWidth < 1024;
+  const isVerticalScreen = window.matchMedia('(orientation: portrait)').matches;
 
   parallaxElements.forEach(el => {
     const speed = parseFloat(el.dataset.parallax) || 0;
     const rect = el.getBoundingClientRect();
-
-    const elTop = rect.top;
-    const elBottom = rect.bottom;
-
-    if (elTop >= 0 && elBottom < viewportHeight) {
-      el.style.transform = `translate(-50%, 0px)`;
-      return;
-    }
-
     const offsetTop = rect.top + scrollTop;
     const elementCenter = offsetTop + rect.height / 2;
     const viewportCenter = scrollTop + viewportHeight / 2;
     const distance = elementCenter - viewportCenter;
 
-    const translateY = distance * -speed;
+    const blockHeight = el.offsetHeight;
+    const isBlockTooSmall = blockHeight < viewportHeight;
+    const isVisible = rect.top < viewportHeight && rect.bottom > 0;
 
-    el.style.transform = `translate(-50%, ${translateY}px)`;
+    if (isMobile || isVerticalScreen || isBlockTooSmall) {
+      if (isVisible) {
+        el.style.transform = `translate(-50%, 0px)`;
+      } else {
+        el.style.transform = `translate(-50%, 100px)`;
+      }
+    } else {
+      const translateY = distance * -speed;
+      el.style.transform = `translate(-50%, ${translateY}px)`;
+    }
   });
 };
 

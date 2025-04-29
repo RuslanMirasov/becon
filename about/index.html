@@ -134,6 +134,75 @@
           </ul>
         </div>
       </section>
+
+      <!--БЕГУЩАЯ СТРОКА-->
+      <div class="marquee">
+        <div class="marquee__inner">
+          <span>СДЕЛАНО В СИБИРИ&nbsp;&nbsp;СДЕЛАНО В СИБИРИ</span>
+          <span>СДЕЛАНО В СИБИРИ&nbsp;&nbsp;СДЕЛАНО В СИБИРИ</span>
+        </div>
+      </div>
+
+      <!--ФОРМА ОБРАТНОЙ СВЯЗИ-->
+      <section class="section section--callbcak">
+        <div class="container">
+          <h2 class="title title--h2">Обратная связь</h2>
+
+          <script>
+            // ОТПРАВКА ФОРМЫ КУДА ЛИБО
+            const onCallbackFormSubmit = e => {
+              e.preventDefault();
+              popup.open('ok');
+            };
+          </script>
+
+          <form action="#" enctype="multipart/form-data" class="form" novalidate onsubmit="onCallbackFormSubmit(event)">
+            <label class="label">
+              <select name="subject" class="input input--select placeholder" required>
+                <option value="" disabled selected hidden>ТЕМА*</option>
+                <option value="Тема 1">Тема 1</option>
+                <option value="Тема 2">Тема 2</option>
+                <option value="Тема 3">Тема 3</option>
+              </select>
+              <span class="input-icon">
+                <svg width="14" height="7"><use href="#select-arrow" /></svg>
+              </span>
+            </label>
+            <label class="label label--textarea">
+              <textarea name="message" class="textarea" placeholder="Сообщение*" required></textarea>
+            </label>
+            <label class="label">
+              <input type="text" name="city" class="input" placeholder="Город*" required />
+            </label>
+            <label class="label">
+              <input type="text" name="name" class="input" placeholder="ФИО*" required />
+            </label>
+            <label class="label label--forFile">
+              <svg width="26" height="23"><use href="#input-file" /></svg>
+              <input type="file" name="file" class="input input--file" required />
+              <span class="file-placeholder">ПРИКРЕПИТЕ ФАЙЛ</span>
+            </label>
+            <label class="label">
+              <input type="tel" name="phone" class="input" placeholder="Телефон*" required />
+            </label>
+            <label class="label">
+              <input type="email" name="email" class="input" placeholder="Почта*" required />
+            </label>
+            <div class="label label--forButton">
+              <button type="submit" class="button full">Отправить <span class="only-in-desctop">&nbsp;сообщение</span></button>
+            </div>
+
+            <span class="form__info">
+              Отправляя свои контактные данные вы соглашаетесь с&nbsp;<a href="./../assets/pdf/policy.pdf" target="_blank">
+                политикой конфиденциальности
+              </a>
+              <br />
+              <br class="show_in_tablet" />
+              *Все поля обязательны к заполнению*
+            </span>
+          </form>
+        </div>
+      </section>
     </main>
 
     <!--FOOTER-->

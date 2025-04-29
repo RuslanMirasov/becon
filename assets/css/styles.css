@@ -2239,7 +2239,8 @@ body.locked {
   width: calc((100% - 60px) / 3);
 }
 .section--callbcak .form .label.label--textarea {
-  width: calc(66.666666% - 15px);
+  width: calc(66.666666% - 10px);
+  width: calc((100% - 15px) / 3 * 2);
 }
 .section--callbcak .form .form__info {
   display: block;
@@ -2867,6 +2868,7 @@ body.locked {
   -o-object-fit: cover;
      object-fit: cover;
   will-change: transform;
+  transform: translate(-50%, 100px);
   transition: transform 2s cubic-bezier(0, 0.58, 0, 1);
 }
 
