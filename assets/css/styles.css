@@ -2564,6 +2564,8 @@ body.locked {
 @media (max-width: 767px) {
   .section--banner {
     padding-bottom: 20px;
+    top: -30px;
+    margin-bottom: -30px;
   }
   .banner {
     width: calc(100% + 40px);
@@ -2598,7 +2600,7 @@ body.locked {
   .banner__image.position-bottom:before {
     width: 80px;
     height: 80px;
-    left: 45%;
+    left: 49%;
     top: 30%;
     transform: translate(50%, 30%);
   }
