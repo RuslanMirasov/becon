@@ -27,6 +27,13 @@
   justify-content: space-between;
   align-items: center;
   gap: 28px;
+  @media (max-width: 767px) {
+    gap: 20px;
+    > .title {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
 
 .distributors__list {
@@ -192,12 +199,12 @@
   }
 
   .distributors__list {
-    margin-top: 0px;
+    margin-top: 20px;
     li {
       padding: 20px;
       min-height: auto;
       flex-wrap: wrap;
-      gap: 10px 40px;
+      gap: 14px 40px;
       p {
         width: auto;
         flex: 1;

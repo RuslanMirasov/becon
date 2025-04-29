@@ -3238,6 +3238,15 @@ body.locked {
   align-items: center;
   gap: 28px;
 }
+@media (max-width: 767px) {
+  .distributors {
+    gap: 20px;
+  }
+  .distributors > .title {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 .distributors__list {
   display: flex;
@@ -3391,13 +3400,13 @@ body.locked {
     max-width: 100%;
   }
   .distributors__list {
-    margin-top: 0px;
+    margin-top: 20px;
   }
   .distributors__list li {
     padding: 20px;
     min-height: auto;
     flex-wrap: wrap;
-    gap: 10px 40px;
+    gap: 14px 40px;
   }
   .distributors__list li p {
     width: auto;
