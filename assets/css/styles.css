@@ -997,10 +997,14 @@ a {
   opacity: 0;
 }
 
-.article-image:hover .spinner {
+.article-image:hover .spinner,
+.article-image:active .spinner,
+.article-image:focus-visible .spinner {
   opacity: 0.8;
 }
-.article-image:hover .spinner:before {
+.article-image:hover .spinner:before,
+.article-image:active .spinner:before,
+.article-image:focus-visible .spinner:before {
   -webkit-animation: rotate 5s linear infinite;
           animation: rotate 5s linear infinite;
 }
@@ -2126,6 +2130,9 @@ body.locked {
     position: absolute;
     top: 100%;
     margin-top: 30px;
+  }
+  .swiper--thumb .swiper-wrapper {
+    justify-content: center;
   }
 }
 .swiper--thumb .swiper-slide {

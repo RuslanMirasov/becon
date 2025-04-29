@@ -189,6 +189,9 @@
     position: absolute;
     top: 100%;
     margin-top: 30px;
+    .swiper-wrapper {
+      justify-content: center;
+    }
   }
 
   .swiper-slide {

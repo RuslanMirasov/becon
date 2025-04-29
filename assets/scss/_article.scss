@@ -143,7 +143,9 @@
   }
 }
 
-.article-image:hover {
+.article-image:hover,
+.article-image:active,
+.article-image:focus-visible {
   .spinner {
     opacity: 0.8;
     &:before {
