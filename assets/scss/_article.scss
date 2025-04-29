@@ -39,6 +39,7 @@
     object-fit: cover;
     transform: scale(1);
     transition: transform 0.4s;
+    pointer-events: none;
   }
 
   .title {
