@@ -1,5 +1,4 @@
 const parallaxElements = document.querySelectorAll('[data-parallax]');
-
 const updateParallax = () => {
   const viewportHeight = window.innerHeight;
 
@@ -7,15 +6,35 @@ const updateParallax = () => {
     const rect = el.getBoundingClientRect();
     const elementCenter = rect.top + rect.height / 2;
 
-    const isCenterVisible = elementCenter >= 0 && elementCenter <= viewportHeight;
+    const isCenterVisible = elementCenter > 0 && elementCenter < viewportHeight + 150;
+
+    const currentTransform = el.style.transform;
 
     if (isCenterVisible) {
-      el.style.transform = `translate(-50%, 0px)`;
+      if (currentTransform === 'translate(-50%, 0px)') return;
+      el.style.transform = 'translate(-50%, 0px)';
     } else {
-      el.style.transform = `translate(-50%, 110px)`;
+      if (currentTransform === 'translate(-50%, 110px)') return;
+      el.style.transform = 'translate(-50%, 110px)';
     }
   });
 };
+// const updateParallax = () => {
+//   const viewportHeight = window.innerHeight;
+
+//   parallaxElements.forEach(el => {
+//     const rect = el.getBoundingClientRect();
+//     const elementCenter = rect.top + rect.height / 2;
+
+//     const isCenterVisible = elementCenter > 0 && elementCenter < viewportHeight + 150;
+
+//     if (isCenterVisible) {
+//       el.style.transform = `translate(-50%, 0px)`;
+//     } else {
+//       el.style.transform = `translate(-50%, 110px)`;
+//     }
+//   });
+// };
 
 // const updateParallax = () => {
 //   const scrollTop = window.scrollY;
