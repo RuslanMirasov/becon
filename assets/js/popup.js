@@ -39,6 +39,7 @@ export const popup = {
     if (alreadyVisible) {
       await this._switchContent(newContent);
     } else {
+      this._scrollY = window.scrollY;
       await this._showContent(newContent);
     }
 
@@ -53,10 +54,14 @@ export const popup = {
     this._backdrop.classList.remove('active');
 
     await this._waitForTransition(this._backdrop);
-    this._hideAllContent();
     this._unlockScroll();
+    this._hideAllContent();
 
     this._isOpening = false;
+
+    // requestAnimationFrame(() => {
+    //   window.scrollTo(0, this._scrollY);
+    // });
   },
 
   _bindCloseEvents() {
@@ -147,26 +152,15 @@ export const popup = {
   },
 
   _lockScroll() {
-    this._scrollY = window.scrollY;
-
     const header = document.querySelector('.header');
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-    document.body.style.position = 'fixed';
-    document.body.style.top = '0';
-    document.body.style.left = '0';
-    document.body.style.right = `${scrollbarWidth}px`;
-    document.body.style.width = `calc(100% - ${scrollbarWidth}px)`;
     document.body.style.overflow = 'hidden';
+    document.body.style.width = `calc(100% - ${scrollbarWidth}px)`;
 
     if (header) {
       header.style.width = `calc(100% - ${scrollbarWidth}px)`;
     }
-
-    ['main', 'footer'].forEach(tag => {
-      const el = document.body.querySelector(`:scope > ${tag}`);
-      if (el) el.style.top = `-${this._scrollY}px`;
-    });
   },
 
   _unlockScroll() {
@@ -176,20 +170,7 @@ export const popup = {
       header.style.width = '100%';
     }
 
-    ['main', 'footer'].forEach(tag => {
-      const el = document.body.querySelector(`:scope > ${tag}`);
-      if (el) el.style.top = '';
-    });
-
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.left = '';
-    document.body.style.right = '';
-    document.body.style.width = '';
     document.body.style.overflow = '';
-
-    requestAnimationFrame(() => {
-      window.scrollTo(0, this._scrollY);
-    });
+    document.body.style.width = '100%';
   },
 };
