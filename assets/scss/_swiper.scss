@@ -1,13 +1,15 @@
 .slider-arrows {
   display: inline-flex;
   gap: 12px;
+  padding-bottom: 10px;
+  justify-content: space-between;
   @media (max-width: 1279px) {
     gap: 10px;
+    padding-bottom: 8px;
   }
   @media (max-width: 767px) {
     display: none;
   }
-  justify-content: space-between;
 }
 
 .swiper-arrow {

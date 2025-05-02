@@ -110,10 +110,28 @@ span.input-icon {
 .textarea {
   display: block;
   padding: 22px 30px;
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
+}
+
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 16px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+/* Firefox */
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
 }
 
 .radio,

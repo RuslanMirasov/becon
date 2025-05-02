@@ -52,6 +52,7 @@ export const fixHeaderOnScroll = () => {
 export const initNavigationMenu = () => {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.navigation ');
+  const menuLinks = document.querySelectorAll('.menu__link');
 
   const toggleMenu = () => {
     burger.classList.toggle('open');
@@ -59,4 +60,5 @@ export const initNavigationMenu = () => {
   };
 
   burger.addEventListener('click', toggleMenu);
+  menuLinks.forEach(link => link.addEventListener('click', toggleMenu));
 };

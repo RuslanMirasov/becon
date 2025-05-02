@@ -338,11 +338,13 @@ a {
 .slider-arrows {
   display: inline-flex;
   gap: 12px;
+  padding-bottom: 10px;
   justify-content: space-between;
 }
 @media (max-width: 1279px) {
   .slider-arrows {
     gap: 10px;
+    padding-bottom: 8px;
   }
 }
 @media (max-width: 767px) {
@@ -1346,9 +1348,27 @@ span.input-icon {
   display: block;
   padding: 22px 30px;
 }
-.textarea::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 16px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+/* Firefox */
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
 }
 
 .radio,
@@ -2245,7 +2265,7 @@ body.locked {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   gap: 28px;
   padding: 100px 30px;
 }
