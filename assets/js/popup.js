@@ -58,10 +58,6 @@ export const popup = {
     this._hideAllContent();
 
     this._isOpening = false;
-
-    // requestAnimationFrame(() => {
-    //   window.scrollTo(0, this._scrollY);
-    // });
   },
 
   _bindCloseEvents() {

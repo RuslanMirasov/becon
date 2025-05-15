@@ -353,6 +353,10 @@ a {
   }
 }
 
+.swiper {
+  width: 100%;
+}
+
 .swiper-arrow {
   display: flex;
   position: relative;
