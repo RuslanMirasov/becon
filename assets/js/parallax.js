@@ -38,6 +38,8 @@ const parallaxElements = document.querySelectorAll('[data-parallax]');
 //   });
 // };
 
+//parallax on desctop
+
 const updateParallax = () => {
   const scrollTop = window.scrollY;
   const viewportHeight = window.innerHeight;
